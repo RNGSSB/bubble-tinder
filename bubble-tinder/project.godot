@@ -14,3 +14,7 @@ config/name="bubble-tinder"
 run/main_scene="res://multiplayer_test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="bubble-tinder"
