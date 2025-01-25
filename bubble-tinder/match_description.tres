@@ -1,3 +1,10 @@
-[gd_resource type="Theme" format=3 uid="uid://dj865biutyflw"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dj865biutyflw"]
+
+[ext_resource type="FontFile" uid="uid://yht8u8g5vld6" path="res://ui/fonts/good timing bd.otf" id="1_bsvko"]
+
+[sub_resource type="FontVariation" id="FontVariation_coe0a"]
+base_font = ExtResource("1_bsvko")
 
 [resource]
+RichTextLabel/font_sizes/normal_font_size = 34
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_coe0a")

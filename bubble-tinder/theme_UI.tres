@@ -1,15 +1,15 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://ilmfrrwb4kap"]
 
-[ext_resource type="FontFile" uid="uid://osy3lswlqjww" path="res://ui/fonts/Coolvetica Rg.otf" id="1_jwo4i"]
+[ext_resource type="FontFile" uid="uid://bp3c2cmvravav" path="res://ui/fonts/Vipnagorgialla Bd It.otf" id="1_vhcum"]
 
 [sub_resource type="FontVariation" id="FontVariation_ytfpp"]
-base_font = ExtResource("1_jwo4i")
-variation_embolden = 0.28
+base_font = ExtResource("1_vhcum")
+variation_embolden = -0.27
 spacing_glyph = -3
 
 [sub_resource type="FontVariation" id="FontVariation_o3xkh"]
-base_font = ExtResource("1_jwo4i")
-variation_embolden = 0.2
+base_font = ExtResource("1_vhcum")
+variation_embolden = 0.29
 spacing_glyph = -3
 
 [resource]
@@ -17,7 +17,7 @@ RichTextLabel/constants/line_separation = 2
 RichTextLabel/constants/outline_size = 23
 RichTextLabel/constants/table_v_separation = -3
 RichTextLabel/constants/text_highlight_v_padding = -2
-RichTextLabel/font_sizes/bold_font_size = 109
-RichTextLabel/font_sizes/normal_font_size = 60
+RichTextLabel/font_sizes/bold_font_size = 78
+RichTextLabel/font_sizes/normal_font_size = 96
 RichTextLabel/fonts/bold_font = SubResource("FontVariation_ytfpp")
 RichTextLabel/fonts/normal_font = SubResource("FontVariation_o3xkh")
