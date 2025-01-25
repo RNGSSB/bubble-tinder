@@ -21,7 +21,9 @@ offset_left = 248.0
 offset_top = 168.0
 offset_right = 857.0
 offset_bottom = 199.0
+context_menu_enabled = false
 shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
 
 [node name="EpicLabel" type="RichTextLabel" parent="."]
 offset_left = 293.0
