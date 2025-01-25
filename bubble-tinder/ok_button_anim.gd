@@ -11,23 +11,17 @@ func _ready() -> void:
 	# Check if this belongs to the player.
 	_start_tween()
 
-func _check_belongs_to_player():
-	if player_number == 1:
-		if multiplayer.is_server():
-			print("This belongs to me, player one!")
-			var button = get_parent()
-			button.mouse_filter = Control.MOUSE_FILTER_PASS
+func _check_belongs_to_player(is_player_one):
+	if is_player_one:
+		if player_number == 1:
+			pass
 		else:
-			var button = get_parent()
-			button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			get_parent().mouse_filter = Control.MOUSE_FILTER_IGNORE
 	else:
-		if multiplayer.get_unique_id() == get_node("Multiplayer Manager").player_two:
-			print("This belongs to me, player two")
-			var button = get_parent()
-			button.mouse_filter = Control.MOUSE_FILTER_PASS
+		if player_number == 1:
+			get_parent().mouse_filter = Control.MOUSE_FILTER_IGNORE
 		else:
-			var button = get_parent()
-			button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			pass
 func _start_tween():
 	var t = create_tween().set_loops()
 	t.tween_property(get_parent(), "position:y", -15, 1).set_trans(Tween.TRANS_SINE).as_relative()

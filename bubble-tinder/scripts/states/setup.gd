@@ -1,11 +1,14 @@
 extends State
 
-
 func Exit():
 	pass
 
 func Enter():
 	owner.stateLabel.text = owner.CURRSTATE
+	# Start checking authority for the setup buttons
+	print("IM CHECKING THE AUTHORITY!")
+	$SETUP.check_authority()
+	
 
 func Update(_delta: float):
 	pass

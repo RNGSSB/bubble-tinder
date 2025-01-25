@@ -9,8 +9,8 @@ func _on_player_confirm():
 	if player1_button.player_has_confirmed and player2_button.player_has_confirmed:
 		has_confirmed_both.emit()
 
-func _on_setup_transitioned() -> void:
-	# Has setup, so, check authority for everything.
-	## CHECAR AUTORIDAD
-	print("IM CHECKING THE AUTHORITY!")
-	pass # Replace with function body.
+func check_authority():
+	var is_player_one = $"../../../Multiplayer Manager".is_player_one()
+	player1_button._check_belongs_to_player(is_player_one)
+	player2_button._check_belongs_to_player(is_player_one)
+	pass

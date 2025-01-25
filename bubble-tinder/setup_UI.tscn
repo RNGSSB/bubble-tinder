@@ -239,6 +239,7 @@ stretch_mode = 5
 [node name="Player 2 Button" type="Node" parent="Player 2/TextureButton2"]
 script = ExtResource("9_30u41")
 onpress_rotation = 0.4
+player_number = 2
 
 [node name="player 2" type="Panel" parent="Player 2"]
 layout_mode = 1
@@ -277,6 +278,8 @@ replication_config = SubResource("SceneReplicationConfig_l31ag")
 [connection signal="mouse_entered" from="Player 1/TextureButton" to="Player 1/TextureButton/Player 1 Button" method="_on_button_hover_anim"]
 [connection signal="mouse_exited" from="Player 1/TextureButton" to="Player 1/TextureButton/Player 1 Button" method="_on_button_unhover_anim"]
 [connection signal="pressed" from="Player 1/TextureButton" to="Player 1/TextureButton/Player 1 Button" method="_on_button_press_anim"]
+[connection signal="player_confirm_signal" from="Player 1/TextureButton/Player 1 Button" to="." method="_on_player_confirm"]
 [connection signal="mouse_entered" from="Player 2/TextureButton2" to="Player 2/TextureButton2/Player 2 Button" method="_on_button_hover_anim"]
 [connection signal="mouse_exited" from="Player 2/TextureButton2" to="Player 2/TextureButton2/Player 2 Button" method="_on_button_unhover_anim"]
 [connection signal="pressed" from="Player 2/TextureButton2" to="Player 2/TextureButton2/Player 2 Button" method="_on_button_press_anim"]
+[connection signal="player_confirm_signal" from="Player 2/TextureButton2/Player 2 Button" to="." method="_on_player_confirm"]
