@@ -15,6 +15,8 @@ func _on_host_pressed():
 	_add_player()
 
 func _add_second_player(id = 1):
+	if id == 1:
+		return
 	player_two = id
 	print("I've added player: " + str(id))
 	player_two = player_ID_scene.instantiate()
