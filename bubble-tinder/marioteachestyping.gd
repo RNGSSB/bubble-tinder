@@ -9,19 +9,22 @@ func _enter_tree():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if name == str(1):
+		position = Vector2(-218,380)
+	else:
+		position = Vector2(1039,380)
+	
 	if is_multiplayer_authority():
 		playerText.editable = true
+		playerText.focus_mode = 3
 	else:
 		playerText.editable = false
+		playerText.focus_mode = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if is_multiplayer_authority():
-		if Input.is_action_just_pressed("ui_down"):
-			position = Vector2(0,200)
-		if Input.is_action_just_pressed("ui_up"):
-			position = Vector2(0,0)
+	pass
 
 
 func _on_line_edit_text_submitted(new_text):
