@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://binl58bbk3yim"]
 
 [ext_resource type="Script" path="res://multiplayer_test.gd" id="1_xmujk"]
-[ext_resource type="PackedScene" uid="uid://my3wfans7v" path="res://basic_player.tscn" id="2_37kuf"]
+[ext_resource type="PackedScene" uid="uid://c2dxtjhjbdftu" path="res://marioteachestyping.tscn" id="2_ka65v"]
 
 [node name="Multiplayer_Test" type="Node2D"]
 script = ExtResource("1_xmujk")
-player_scene = ExtResource("2_37kuf")
+player_scene = ExtResource("2_ka65v")
 
 [node name="Host" type="Button" parent="."]
 offset_left = 9.0
