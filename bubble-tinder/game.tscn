@@ -58,6 +58,7 @@ offset_bottom = 68.0
 text = "Join"
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Multiplayer Manager"]
+_spawnable_scenes = PackedStringArray("res://player_id.tscn")
 spawn_path = NodePath("..")
 
 [connection signal="has_confirmed_both" from="StateMachine/Setup/SETUP" to="StateMachine/Setup" method="_on_setup_has_confirmed_both"]
