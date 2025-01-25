@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2dxtjhjbdftu"]
+
+[ext_resource type="Script" path="res://marioteachestyping.gd" id="1_f7p8w"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_f7p8w")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 248.0
+offset_top = 168.0
+offset_right = 857.0
+offset_bottom = 199.0
+shortcut_keys_enabled = false
+
+[node name="Label" type="Label" parent="."]
+offset_left = 189.0
+offset_top = 39.0
+offset_right = 369.0
+offset_bottom = 62.0
+text = "Sonic Adventure 2 Battle"
+
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
