@@ -9,7 +9,10 @@ func _enter_tree():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	if is_multiplayer_authority():
+		playerText.editable = false
+	else:
+		playerText.editable = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

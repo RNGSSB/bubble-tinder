@@ -18,5 +18,5 @@ func _add_player(id = 1):
 
 
 func _on_join_pressed():
-	peer.create_client("169.254.127.65", 80)
+	peer.create_client("169.254.212.37", 80)
 	multiplayer.multiplayer_peer = peer
