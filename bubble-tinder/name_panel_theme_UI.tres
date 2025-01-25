@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c0xwktvuwulf1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dhlt"]
+bg_color = Color(0, 0, 0, 1)
+skew = Vector2(0.54, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61jtt"]
+content_margin_left = 14.0
+bg_color = Color(0, 0, 0, 1)
+skew = Vector2(0.465, 0)
+border_color = Color(0.814674, 4.13924e-06, 0.508609, 1)
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxFlat_8dhlt")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_61jtt")
