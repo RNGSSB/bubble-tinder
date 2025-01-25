@@ -63,7 +63,6 @@ text = "Join"
 _spawnable_scenes = PackedStringArray("res://player_id.tscn")
 spawn_path = NodePath("..")
 
-[connection signal="Transitioned" from="StateMachine/Setup" to="StateMachine/Setup/SETUP" method="_on_setup_transitioned"]
 [connection signal="has_confirmed_both" from="StateMachine/Setup/SETUP" to="StateMachine/Setup" method="_on_setup_has_confirmed_both"]
 [connection signal="pressed" from="Multiplayer Manager/Host" to="Multiplayer Manager" method="_on_host_pressed"]
 [connection signal="pressed" from="Multiplayer Manager/Join" to="Multiplayer Manager" method="_on_join_pressed"]

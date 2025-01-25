@@ -2,12 +2,32 @@ extends Node
 
 @export var onpress_rotation = -0.4
 @export var player_has_confirmed = false
+@export var player_number = 1
+@export var belongs_to_player = false
 
 signal player_confirm_signal
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Check if this belongs to the player.
 	_start_tween()
 
+func _check_belongs_to_player():
+	if player_number == 1:
+		if multiplayer.is_server():
+			print("This belongs to me, player one!")
+			var button = get_parent()
+			button.mouse_filter = Control.MOUSE_FILTER_PASS
+		else:
+			var button = get_parent()
+			button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	else:
+		if multiplayer.get_unique_id() == get_node("Multiplayer Manager").player_two:
+			print("This belongs to me, player two")
+			var button = get_parent()
+			button.mouse_filter = Control.MOUSE_FILTER_PASS
+		else:
+			var button = get_parent()
+			button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 func _start_tween():
 	var t = create_tween().set_loops()
 	t.tween_property(get_parent(), "position:y", -15, 1).set_trans(Tween.TRANS_SINE).as_relative()

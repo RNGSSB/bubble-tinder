@@ -37,8 +37,10 @@ func _add_player(id = 1):
 func _verify_has_two_players():
 	if player_one != null and player_two != null:
 		print("We have two players now!")
-	# add the player authority
+	# transition to setup
+	$"../StateMachine".change_state("Setup")
 
 func _on_join_pressed():
 	peer.create_client("169.254.212.37", 80)
 	multiplayer.multiplayer_peer = peer
+	print("I am a peer ..." + str(multiplayer.get_unique_id()))
