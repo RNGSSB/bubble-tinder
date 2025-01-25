@@ -57,6 +57,9 @@ offset_right = 49.0
 offset_bottom = 68.0
 text = "Join"
 
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Multiplayer Manager"]
+spawn_path = NodePath("..")
+
 [connection signal="has_confirmed_both" from="StateMachine/Setup/SETUP" to="StateMachine/Setup" method="_on_setup_has_confirmed_both"]
 [connection signal="pressed" from="Multiplayer Manager/Host" to="Multiplayer Manager" method="_on_host_pressed"]
 [connection signal="pressed" from="Multiplayer Manager/Join" to="Multiplayer Manager" method="_on_join_pressed"]
