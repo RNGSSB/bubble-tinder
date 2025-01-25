@@ -37,6 +37,10 @@ func _on_button_unhover_anim():
 
 
 func _on_button_press_anim():
+	player_ready.rpc()
+
+@rpc("call_local", "reliable", "any_peer")
+func player_ready():
 	var t = create_tween()
 	get_parent().disabled = true
 	get_parent().mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -45,6 +49,8 @@ func _on_button_press_anim():
 	t.tween_property(get_parent(), "rotation", onpress_rotation, 0.2).set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT).as_relative()
 	print("I've emitted the signal: " + get_parent().name)
 	player_confirm_signal.emit()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	pass
