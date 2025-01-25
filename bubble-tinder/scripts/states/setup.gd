@@ -3,6 +3,7 @@ extends State
 func Exit():
 	pass
 
+
 func Enter():
 	owner.stateLabel.text = owner.CURRSTATE
 	# Start checking authority for the setup buttons
