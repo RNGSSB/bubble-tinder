@@ -17,7 +17,7 @@ func _add_player(id = 1):
 		player_two = id
 	else:
 		player_one = id
-	print("I've added player: " + id)
+	print("I've added player: " + str(id))
 	
 func _verify_has_two_players():
 	if player_one != "" and player_two != "":
