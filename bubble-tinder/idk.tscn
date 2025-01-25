@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsa7m03oft36p"]
+[gd_scene load_steps=14 format=3 uid="uid://bsa7m03oft36p"]
 
 [ext_resource type="Script" path="res://character_test.gd" id="1_ux1a5"]
 [ext_resource type="Script" path="res://resource/prompt.gd" id="2_k8qjw"]
@@ -27,6 +27,28 @@ answer1 = SubResource("Resource_t311n")
 answer2 = SubResource("Resource_3k2el")
 answer3 = SubResource("Resource_eypbn")
 
+[sub_resource type="Resource" id="Resource_b1x4f"]
+script = ExtResource("3_s17tr")
+answerText = "..."
+answerTrait = 1
+
+[sub_resource type="Resource" id="Resource_o34nd"]
+script = ExtResource("3_s17tr")
+answerText = "adios"
+answerTrait = 2
+
+[sub_resource type="Resource" id="Resource_hqsd6"]
+script = ExtResource("3_s17tr")
+answerText = "xdxdxdxdxd"
+answerTrait = 0
+
+[sub_resource type="Resource" id="Resource_5xwt8"]
+script = ExtResource("2_k8qjw")
+promptText = "como estas papu"
+answer1 = SubResource("Resource_b1x4f")
+answer2 = SubResource("Resource_o34nd")
+answer3 = SubResource("Resource_hqsd6")
+
 [sub_resource type="Resource" id="Resource_xyip2"]
 script = ExtResource("2_lya3l")
 name = "Goth"
@@ -38,8 +60,8 @@ postive1 = 1
 postive2 = 2
 negative1 = 4
 negative2 = 3
-prompts = Array[ExtResource("2_k8qjw")]([SubResource("Resource_3y68p"), null, null, null, null, null, null, null, null, null, null, null])
+prompts = Array[ExtResource("2_k8qjw")]([SubResource("Resource_3y68p"), SubResource("Resource_5xwt8")])
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_ux1a5")
 def = SubResource("Resource_xyip2")

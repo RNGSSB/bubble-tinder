@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2dxtjhjbdftu"]
+[gd_scene load_steps=4 format=3 uid="uid://c2dxtjhjbdftu"]
 
 [ext_resource type="Script" path="res://marioteachestyping.gd" id="1_f7p8w"]
+[ext_resource type="PackedScene" uid="uid://bsa7m03oft36p" path="res://idk.tscn" id="2_7gto3"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tto0q"]
 properties/0/path = NodePath("LineEdit:text")
@@ -14,7 +15,7 @@ properties/2/spawn = true
 properties/2/replication_mode = 1
 
 [node name="InputStuff" type="Node2D"]
-position = Vector2(1039, 380)
+position = Vector2(-145, 27)
 script = ExtResource("1_f7p8w")
 
 [node name="LineEdit" type="LineEdit" parent="."]
@@ -25,6 +26,8 @@ offset_bottom = 199.0
 context_menu_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
+
+[node name="Character" parent="." instance=ExtResource("2_7gto3")]
 
 [node name="EpicLabel" type="RichTextLabel" parent="."]
 offset_left = 293.0
@@ -37,5 +40,32 @@ text = "[color=gray]Sonic Adventure 2 Battle[/color]"
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_tto0q")
 
+[node name="Answer1" type="Button" parent="."]
+offset_left = 371.0
+offset_top = 443.0
+offset_right = 489.0
+offset_bottom = 474.0
+
+[node name="Answer2" type="Button" parent="."]
+offset_left = 361.0
+offset_top = 315.0
+offset_right = 479.0
+offset_bottom = 346.0
+
+[node name="Answer3" type="Button" parent="."]
+offset_left = 367.0
+offset_top = 386.0
+offset_right = 485.0
+offset_bottom = 417.0
+
+[node name="displayPrompt" type="RichTextLabel" parent="."]
+offset_left = 295.0
+offset_top = -4.0
+offset_right = 519.0
+offset_bottom = 36.0
+
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="Answer1" to="." method="_on_answer_1_pressed"]
+[connection signal="pressed" from="Answer2" to="." method="_on_answer_2_pressed"]
+[connection signal="pressed" from="Answer3" to="." method="_on_answer_3_pressed"]

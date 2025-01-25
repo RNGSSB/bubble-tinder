@@ -112,13 +112,10 @@ func _on_answer_1_pressed():
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
 	playerText.focus_mode = 2
 
-
 func _on_answer_2_pressed():
 	prompt = currentCharacter.def.prompts[currentPrompt].answer2.answerText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
 	playerText.focus_mode = 2
-
-
 
 func _on_answer_3_pressed():
 	prompt = currentCharacter.def.prompts[currentPrompt].answer3.answerText
