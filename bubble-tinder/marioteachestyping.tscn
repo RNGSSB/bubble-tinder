@@ -12,11 +12,13 @@ offset_right = 857.0
 offset_bottom = 199.0
 shortcut_keys_enabled = false
 
-[node name="Label" type="Label" parent="."]
-offset_left = 189.0
-offset_top = 39.0
-offset_right = 369.0
-offset_bottom = 62.0
-text = "Sonic Adventure 2 Battle"
+[node name="EpicLabel" type="RichTextLabel" parent="."]
+offset_left = 293.0
+offset_top = 100.0
+offset_right = 828.0
+offset_bottom = 142.0
+bbcode_enabled = true
+text = "[color=gray]Sonic Adventure 2 Battle[/color]"
 
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
