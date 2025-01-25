@@ -1,29 +1,39 @@
-[gd_scene load_steps=10 format=3 uid="uid://ba1qnw1tfjmag"]
+[gd_scene load_steps=12 format=3 uid="uid://bgfkkk2bdt01r"]
 
-[ext_resource type="Texture2D" uid="uid://3me3yn4dqued" path="res://ui/mockups/setup.png" id="1_c5ms0"]
-[ext_resource type="Texture2D" uid="uid://u7xychm3oum3" path="res://ui/mockups/match_image.png" id="2_7rlck"]
-[ext_resource type="Theme" uid="uid://dj865biutyflw" path="res://match_description.tres" id="3_2dgx5"]
-[ext_resource type="Theme" uid="uid://c0xwktvuwulf1" path="res://name_panel_theme_UI.tres" id="3_flqtg"]
-[ext_resource type="Theme" uid="uid://ilmfrrwb4kap" path="res://theme_UI.tres" id="4_bm71p"]
-[ext_resource type="Texture2D" uid="uid://b30imwkp8if5x" path="res://ui/imgs/ok_button.png" id="5_ph6eg"]
-[ext_resource type="Script" path="res://ok_button_anim.gd" id="6_1dlkx"]
-[ext_resource type="Texture2D" uid="uid://ddnod1km4ksyk" path="res://ui/imgs/ok_button_pressed.png" id="6_iw2c1"]
-[ext_resource type="Texture2D" uid="uid://cy2gydmd4mo8o" path="res://ui/imgs/ok_button_hover.png" id="7_cfysx"]
+[ext_resource type="Script" path="res://setup_behavior.gd" id="1_hb5aq"]
+[ext_resource type="Texture2D" uid="uid://3me3yn4dqued" path="res://ui/mockups/setup.png" id="1_j7w3q"]
+[ext_resource type="Texture2D" uid="uid://u7xychm3oum3" path="res://ui/mockups/match_image.png" id="2_enhdr"]
+[ext_resource type="Theme" uid="uid://dj865biutyflw" path="res://match_description.tres" id="3_ysciy"]
+[ext_resource type="Theme" uid="uid://c0xwktvuwulf1" path="res://name_panel_theme_UI.tres" id="4_pbehu"]
+[ext_resource type="Theme" uid="uid://ilmfrrwb4kap" path="res://theme_UI.tres" id="5_bdfsv"]
+[ext_resource type="Texture2D" uid="uid://b30imwkp8if5x" path="res://ui/imgs/ok_button.png" id="6_jhxby"]
+[ext_resource type="Texture2D" uid="uid://ddnod1km4ksyk" path="res://ui/imgs/ok_button_pressed.png" id="7_la3f5"]
+[ext_resource type="Texture2D" uid="uid://cy2gydmd4mo8o" path="res://ui/imgs/ok_button_hover.png" id="8_mvalt"]
+[ext_resource type="Script" path="res://ok_button_anim.gd" id="9_30u41"]
 
-[node name="Control" type="Control"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_l31ag"]
+properties/0/path = NodePath("Player 1/TextureButton/Player 1 Button:player_has_confirmed")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath("Player 2/TextureButton2/Player 2 Button:player_has_confirmed")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+
+[node name="SETUP" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hb5aq")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.156863)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_c5ms0")
+texture = ExtResource("1_j7w3q")
 
 [node name="Center Column" type="Control" parent="."]
 layout_mode = 1
@@ -83,7 +93,7 @@ offset_right = 262.0
 offset_bottom = 361.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_7rlck")
+texture = ExtResource("2_enhdr")
 stretch_mode = 6
 
 [node name="Text and Emojis" type="Control" parent="Center Column"]
@@ -119,7 +129,7 @@ size_flags_stretch_ratio = 1.54
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Center Column/Text and Emojis/Descripcion"]
 layout_mode = 2
-theme = ExtResource("3_2dgx5")
+theme = ExtResource("3_ysciy")
 text = "Pero hablame bonito eh. Me la vivo en el gym, hacemos peso muerto de dos?"
 
 [node name="Name Box" type="Panel" parent="Center Column/Text and Emojis"]
@@ -130,7 +140,7 @@ offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme = ExtResource("3_flqtg")
+theme = ExtResource("4_pbehu")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Center Column/Text and Emojis/Name Box"]
 clip_contents = false
@@ -147,7 +157,7 @@ offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
-theme = ExtResource("4_bm71p")
+theme = ExtResource("5_bdfsv")
 bbcode_enabled = true
 text = "[b]juanpi, 28"
 fit_content = true
@@ -169,7 +179,7 @@ offset_top = -374.0
 offset_right = 469.0
 offset_bottom = -301.0
 grow_vertical = 2
-theme = ExtResource("3_flqtg")
+theme = ExtResource("4_pbehu")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Player 1/player 1"]
 layout_mode = 1
@@ -182,7 +192,7 @@ offset_right = 331.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_bm71p")
+theme = ExtResource("5_bdfsv")
 bbcode_enabled = true
 text = "player 2"
 fit_content = true
@@ -196,14 +206,14 @@ offset_bottom = 613.0
 rotation = -0.352507
 pivot_offset = Vector2(123, 130)
 keep_pressed_outside = true
-texture_normal = ExtResource("5_ph6eg")
-texture_pressed = ExtResource("6_iw2c1")
-texture_hover = ExtResource("7_cfysx")
-texture_disabled = ExtResource("6_iw2c1")
+texture_normal = ExtResource("6_jhxby")
+texture_pressed = ExtResource("7_la3f5")
+texture_hover = ExtResource("8_mvalt")
+texture_disabled = ExtResource("7_la3f5")
 stretch_mode = 5
 
 [node name="Player 1 Button" type="Node" parent="Player 1/TextureButton"]
-script = ExtResource("6_1dlkx")
+script = ExtResource("9_30u41")
 onpress_rotation = 0.4
 
 [node name="Player 2" type="Control" parent="."]
@@ -212,6 +222,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureButton2" type="TextureButton" parent="Player 2"]
+layout_mode = 0
 offset_left = 1500.0
 offset_top = 336.0
 offset_right = 1747.0
@@ -219,14 +230,14 @@ offset_bottom = 596.0
 rotation = 0.490438
 pivot_offset = Vector2(123, 130)
 keep_pressed_outside = true
-texture_normal = ExtResource("5_ph6eg")
-texture_pressed = ExtResource("6_iw2c1")
-texture_hover = ExtResource("7_cfysx")
-texture_disabled = ExtResource("6_iw2c1")
+texture_normal = ExtResource("6_jhxby")
+texture_pressed = ExtResource("7_la3f5")
+texture_hover = ExtResource("8_mvalt")
+texture_disabled = ExtResource("7_la3f5")
 stretch_mode = 5
 
 [node name="Player 2 Button" type="Node" parent="Player 2/TextureButton2"]
-script = ExtResource("6_1dlkx")
+script = ExtResource("9_30u41")
 onpress_rotation = 0.4
 
 [node name="player 2" type="Panel" parent="Player 2"]
@@ -242,7 +253,7 @@ offset_right = 1872.0
 offset_bottom = 219.0
 grow_horizontal = 0
 grow_vertical = 2
-theme = ExtResource("3_flqtg")
+theme = ExtResource("4_pbehu")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Player 2/player 2"]
 layout_mode = 1
@@ -255,10 +266,13 @@ offset_right = 271.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_bm71p")
+theme = ExtResource("5_bdfsv")
 bbcode_enabled = true
 text = "player 2"
 fit_content = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_l31ag")
 
 [connection signal="mouse_entered" from="Player 1/TextureButton" to="Player 1/TextureButton/Player 1 Button" method="_on_button_hover_anim"]
 [connection signal="mouse_exited" from="Player 1/TextureButton" to="Player 1/TextureButton/Player 1 Button" method="_on_button_unhover_anim"]

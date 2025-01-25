@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://cahya0186gp0l"]
+
+[ext_resource type="Script" path="res://scripts/game_system.gd" id="1_b86r6"]
+[ext_resource type="Script" path="res://scripts/StateMachine.gd" id="2_7kcuf"]
+[ext_resource type="Script" path="res://scripts/states/setup.gd" id="3_600sm"]
+[ext_resource type="Script" path="res://scripts/states/typing.gd" id="4_gq7kg"]
+[ext_resource type="PackedScene" uid="uid://bgfkkk2bdt01r" path="res://setup_UI.tscn" id="4_r0yjy"]
+[ext_resource type="Script" path="res://multiplayer_manager.gd" id="6_drphp"]
+
+[node name="GAME" type="Node2D" node_paths=PackedStringArray("stateLabel", "timerLabel")]
+script = ExtResource("1_b86r6")
+stateLabel = NodePath("State")
+timerLabel = NodePath("Timer")
+
+[node name="State" type="RichTextLabel" parent="."]
+offset_left = 412.0
+offset_top = 174.0
+offset_right = 808.0
+offset_bottom = 214.0
+text = "Current State"
+
+[node name="Timer" type="RichTextLabel" parent="."]
+offset_left = 472.0
+offset_top = 260.0
+offset_right = 816.0
+offset_bottom = 300.0
+text = "time"
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_7kcuf")
+initial_state = NodePath("Setup")
+
+[node name="Setup" type="Node" parent="StateMachine"]
+script = ExtResource("3_600sm")
+
+[node name="SETUP" parent="StateMachine/Setup" instance=ExtResource("4_r0yjy")]
+visible = false
+
+[node name="Typing" type="Node" parent="StateMachine"]
+script = ExtResource("4_gq7kg")
+
+[node name="Multiplayer Manager" type="Node2D" parent="."]
+script = ExtResource("6_drphp")
+
+[node name="Host" type="Button" parent="Multiplayer Manager"]
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 44.0
+offset_bottom = 28.0
+text = "Host
+"
+
+[node name="Join" type="Button" parent="Multiplayer Manager"]
+offset_left = 6.0
+offset_top = 45.0
+offset_right = 49.0
+offset_bottom = 68.0
+text = "Join"
+
+[connection signal="has_confirmed_both" from="StateMachine/Setup/SETUP" to="StateMachine/Setup" method="_on_setup_has_confirmed_both"]

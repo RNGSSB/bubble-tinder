@@ -11,5 +11,7 @@ func Update(_delta: float):
 	pass
 
 func Physics_Update(delta: float):
-	if owner.stateFrame > 500:
-		Transitioned.emit(self, "typing")
+	pass
+		
+func _on_setup_has_confirmed_both() -> void:
+	Transitioned.emit(self, "typing")
