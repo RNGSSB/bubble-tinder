@@ -4,8 +4,8 @@ extends Node2D
 @export var stateLabel : RichTextLabel
 @export var timerLabel : RichTextLabel
 
-@export var PREVSTATE = "Setup"
-@export var CURRSTATE = "Setup"
+@export var PREVSTATE = "Lobby"
+@export var CURRSTATE = "Lobby"
 
 var stateFrame = 0
 var frameCounter = 0
