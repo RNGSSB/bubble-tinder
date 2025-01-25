@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://c7cpjhm181wyd"]
+
+[ext_resource type="Script" path="res://resource/character.gd" id="1_2x2yf"]
+
+[resource]
+script = ExtResource("1_2x2yf")
+name = ""
+trait1 = 0
+trait2 = 2
+postive1 = 1
+postive2 = 2
+negative1 = 4
+negative2 = 3

@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2dxtjhjbdftu"]
+[gd_scene load_steps=3 format=3 uid="uid://c2dxtjhjbdftu"]
 
 [ext_resource type="Script" path="res://marioteachestyping.gd" id="1_f7p8w"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tto0q"]
+properties/0/path = NodePath("LineEdit:text")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="InputStuff" type="Node2D"]
 script = ExtResource("1_f7p8w")
 
 [node name="LineEdit" type="LineEdit" parent="."]
@@ -12,11 +17,16 @@ offset_right = 857.0
 offset_bottom = 199.0
 shortcut_keys_enabled = false
 
-[node name="Label" type="Label" parent="."]
-offset_left = 189.0
-offset_top = 39.0
-offset_right = 369.0
-offset_bottom = 62.0
-text = "Sonic Adventure 2 Battle"
+[node name="EpicLabel" type="RichTextLabel" parent="."]
+offset_left = 293.0
+offset_top = 100.0
+offset_right = 828.0
+offset_bottom = 142.0
+bbcode_enabled = true
+text = "[color=gray]Sonic Adventure 2 Battle[/color]"
 
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_tto0q")
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

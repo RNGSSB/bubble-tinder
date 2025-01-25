@@ -13,6 +13,7 @@ func _on_host_pressed():
 func _add_player(id = 1):
 	var player = player_scene.instantiate()
 	player.name = str(id)
+	print(player.name)
 	call_deferred("add_child", player)
 
 
