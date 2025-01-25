@@ -23,7 +23,7 @@ offset_bottom = 68.0
 text = "Join"
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://basic_player.tscn")
+_spawnable_scenes = PackedStringArray("res://marioteachestyping.tscn")
 spawn_path = NodePath("..")
 
 [connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
