@@ -39,7 +39,7 @@ func _verify_has_two_players():
 		print("We have two players now!")
 	# transition to setup
 	if multiplayer.is_server():
-		$"../StateMachine".change_state("Setup").rpc()
+		$"../StateMachine".rpc("change_state", "Setup")
 
 func _on_join_pressed():
 	peer.create_client("169.254.212.37", 80)
