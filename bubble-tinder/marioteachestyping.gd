@@ -14,10 +14,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("ui_down"):
-		position = Vector2(0,200)
-	if Input.is_action_just_pressed("ui_up"):
-		position = Vector2(0,0)
+	if is_multiplayer_authority():
+		if Input.is_action_just_pressed("ui_down"):
+			position = Vector2(0,200)
+		if Input.is_action_just_pressed("ui_up"):
+			position = Vector2(0,0)
 
 
 func _on_line_edit_text_submitted(new_text):
