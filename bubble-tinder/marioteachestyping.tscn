@@ -14,6 +14,7 @@ properties/2/spawn = true
 properties/2/replication_mode = 1
 
 [node name="InputStuff" type="Node2D"]
+position = Vector2(1039, 380)
 script = ExtResource("1_f7p8w")
 
 [node name="LineEdit" type="LineEdit" parent="."]
