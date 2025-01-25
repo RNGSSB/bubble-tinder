@@ -3,8 +3,8 @@ extends Node2D
 var peer = ENetMultiplayerPeer.new()
 @export var player_ID_scene: PackedScene
 
-var player_one 
-var player_two
+var player_one = null
+var player_two = null
 
 var current_player_ID = 0
 
@@ -33,7 +33,7 @@ func _add_player(id = 1):
 	_verify_has_two_players()
 	
 func _verify_has_two_players():
-	if player_one != 0 and player_two != 0:
+	if player_one != null and player_two != null:
 		print("We have two players now!")
 	# add the player authority
 
