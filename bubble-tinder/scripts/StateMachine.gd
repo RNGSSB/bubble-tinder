@@ -25,7 +25,7 @@ func _physics_process(delta):
 		owner.stateFrame += 1
 		current_state.Physics_Update(delta)
 
-@rpc
+@rpc("authority", "call_local", "reliable")
 func change_state(new_state_name):
 	var new_state = states.get(new_state_name.to_lower())
 	if !new_state:
