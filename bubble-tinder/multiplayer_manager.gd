@@ -42,7 +42,7 @@ func _verify_has_two_players():
 
 func _on_join_pressed():
 	AudioManager.buttonPress.play()
-	peer.create_client("169.254.127.65", 80)
+	peer.create_client("localhost", 80)
 	multiplayer.multiplayer_peer = peer
 	print("I am a peer ..." + str(multiplayer.get_unique_id()))
 

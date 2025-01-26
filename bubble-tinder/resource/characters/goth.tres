@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=17 format=3 uid="uid://d3rylo21midn4"]
+[gd_resource type="Resource" script_class="Character" load_steps=29 format=3 uid="uid://d3rylo21midn4"]
 
 [ext_resource type="Script" path="res://resource/prompt.gd" id="1_5yat8"]
 [ext_resource type="Texture2D" uid="uid://urjoq45tfomp" path="res://ui/violeta.png" id="1_cv6sf"]
@@ -7,69 +7,135 @@
 
 [sub_resource type="Resource" id="Resource_y2i68"]
 script = ExtResource("2_wesve")
-answerText = "Hiiiiiii :3"
+answerText = "y de ahi a donde o k? ;)"
 answerTrait = 0
 
 [sub_resource type="Resource" id="Resource_xkqvf"]
 script = ExtResource("2_wesve")
-answerText = "Hi."
+answerText = "Pues si quieres. Va."
 answerTrait = 1
 
 [sub_resource type="Resource" id="Resource_ulgns"]
 script = ExtResource("2_wesve")
-answerText = "Hi (why didnt you text me)"
-answerTrait = 2
+answerText = "Mmm...si sabias que ahi no venden cafe? 7_7"
+answerTrait = 5
 
 [sub_resource type="Resource" id="Resource_w0ymg"]
 script = ExtResource("1_5yat8")
-promptText = "Omg hi"
+promptText = "oe y q ondx'? le caes al tokiin de mi friendd? L_L'"
 answer1 = SubResource("Resource_y2i68")
 answer2 = SubResource("Resource_xkqvf")
 answer3 = SubResource("Resource_ulgns")
 
 [sub_resource type="Resource" id="Resource_fqm7u"]
 script = ExtResource("2_wesve")
-answerText = "I love sonic yay"
-answerTrait = 0
+answerText = "Mm... me gusta lo refinado, no ese tipo de cosas..."
+answerTrait = 4
 
 [sub_resource type="Resource" id="Resource_c4fco"]
 script = ExtResource("2_wesve")
-answerText = "Hello"
-answerTrait = 1
+answerText = "y shi mejor yo te canto? es mas te hago una canciooon n.n"
+answerTrait = 3
 
 [sub_resource type="Resource" id="Resource_ncrps"]
 script = ExtResource("2_wesve")
-answerText = "Skibidi toilet"
-answerTrait = 2
+answerText = "me gusta mas el de All Hope is Gone... un clasico del 2008..."
+answerTrait = 5
 
 [sub_resource type="Resource" id="Resource_gg0e8"]
 script = ExtResource("1_5yat8")
-promptText = "Ummm hi hello"
+promptText = "mm y si ubikas a slipknot o pxndx?? o eres puro caifanes? e_e''"
 answer1 = SubResource("Resource_fqm7u")
 answer2 = SubResource("Resource_c4fco")
 answer3 = SubResource("Resource_ncrps")
 
 [sub_resource type="Resource" id="Resource_fdqa0"]
 script = ExtResource("2_wesve")
-answerText = "Skibidi"
-answerTrait = 0
+answerText = "No quiero hablar con otra mujer que no seas tu. Y tu?"
+answerTrait = 2
 
 [sub_resource type="Resource" id="Resource_epc4s"]
 script = ExtResource("2_wesve")
-answerText = "Yahooooo"
-answerTrait = 2
+answerText = "ayy la quiero mucho n.n ya quiero que la conozcaaas"
+answerTrait = 3
 
 [sub_resource type="Resource" id="Resource_ao7oc"]
 script = ExtResource("2_wesve")
-answerText = "Epicness incorporated"
-answerTrait = 3
+answerText = "No la veo tanto. Vive en Las Lomas..."
+answerTrait = 4
 
 [sub_resource type="Resource" id="Resource_j4lis"]
 script = ExtResource("1_5yat8")
-promptText = "Whats vibes yay"
+promptText = "mmm oie... pregunta inkomoda pero... como te llevas con tu momz??? o.o'' soy kuriosa XD"
 answer1 = SubResource("Resource_fdqa0")
 answer2 = SubResource("Resource_epc4s")
 answer3 = SubResource("Resource_ao7oc")
+
+[sub_resource type="Resource" id="Resource_8axr8"]
+script = ExtResource("2_wesve")
+answerText = "La mas bonita y la que quiero cuidar ;)"
+answerTrait = 0
+
+[sub_resource type="Resource" id="Resource_1tdxg"]
+script = ExtResource("2_wesve")
+answerText = "Cual gata...eres una tigresa, y yo un leon."
+answerTrait = 4
+
+[sub_resource type="Resource" id="Resource_lauou"]
+script = ExtResource("2_wesve")
+answerText = "El gato mas unico es el siames, igual que tu"
+answerTrait = 5
+
+[sub_resource type="Resource" id="Resource_srlou"]
+script = ExtResource("1_5yat8")
+promptText = "oie y si io fuera un gatito??? como k vibra t doy?? u.u''"
+answer1 = SubResource("Resource_8axr8")
+answer2 = SubResource("Resource_1tdxg")
+answer3 = SubResource("Resource_lauou")
+
+[sub_resource type="Resource" id="Resource_wauil"]
+script = ExtResource("2_wesve")
+answerText = "Mejor te doy el toque en Facebook no?"
+answerTrait = 0
+
+[sub_resource type="Resource" id="Resource_io3wx"]
+script = ExtResource("2_wesve")
+answerText = "Saludos."
+answerTrait = 1
+
+[sub_resource type="Resource" id="Resource_6rmah"]
+script = ExtResource("2_wesve")
+answerText = "te 128ve980 a ti n.n"
+answerTrait = 5
+
+[sub_resource type="Resource" id="Resource_anpqe"]
+script = ExtResource("1_5yat8")
+promptText = "oie y k me pondrias en fotolog en la firma?? n.n''"
+answer1 = SubResource("Resource_wauil")
+answer2 = SubResource("Resource_io3wx")
+answer3 = SubResource("Resource_6rmah")
+
+[sub_resource type="Resource" id="Resource_kvioj"]
+script = ExtResource("2_wesve")
+answerText = "yo creo que eres toda mia ;)"
+answerTrait = 0
+
+[sub_resource type="Resource" id="Resource_eqmaq"]
+script = ExtResource("2_wesve")
+answerText = "Tu y yo seremos lo que querramos ser...pero juntos."
+answerTrait = 4
+
+[sub_resource type="Resource" id="Resource_6jqux"]
+script = ExtResource("2_wesve")
+answerText = "mm pues si pareces. igual deberias maquillarte menos."
+answerTrait = 2
+
+[sub_resource type="Resource" id="Resource_dp1f6"]
+script = ExtResource("1_5yat8")
+promptText = "oshhh mi mama dice q soy EMO -.-'' no soi!!!!!! que opinas tu? :("
+answer1 = SubResource("Resource_kvioj")
+answer2 = SubResource("Resource_eqmaq")
+answer3 = SubResource("Resource_6jqux")
 
 [resource]
 script = ExtResource("2_alpnb")
@@ -79,8 +145,8 @@ description = "L_L puro pxndx y asiii'. me gustan los inteligentes ._.' y que se
 profile_picture = ExtResource("1_cv6sf")
 trait1 = 0
 trait2 = 2
-postive1 = 1
-postive2 = 2
+postive1 = 4
+postive2 = 5
 negative1 = 3
 negative2 = 0
-prompts = Array[ExtResource("1_5yat8")]([SubResource("Resource_w0ymg"), SubResource("Resource_gg0e8"), SubResource("Resource_j4lis")])
+prompts = Array[ExtResource("1_5yat8")]([SubResource("Resource_w0ymg"), SubResource("Resource_gg0e8"), SubResource("Resource_j4lis"), SubResource("Resource_srlou"), SubResource("Resource_anpqe"), SubResource("Resource_dp1f6")])

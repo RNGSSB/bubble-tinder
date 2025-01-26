@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=17 format=3 uid="uid://cdq7bw6swgqp6"]
+[gd_resource type="Resource" script_class="Character" load_steps=29 format=3 uid="uid://cdq7bw6swgqp6"]
 
 [ext_resource type="Script" path="res://resource/prompt.gd" id="1_1f4o1"]
 [ext_resource type="Texture2D" uid="uid://8ia3bupl7eh3" path="res://ui/juanpi.png" id="1_yyf24"]
@@ -7,69 +7,135 @@
 
 [sub_resource type="Resource" id="Resource_y2i68"]
 script = ExtResource("2_pu8y0")
-answerText = "Hiiiiiii :3"
+answerText = "mmm a ver veeen cjs"
 answerTrait = 0
 
 [sub_resource type="Resource" id="Resource_xkqvf"]
 script = ExtResource("2_pu8y0")
-answerText = "Hi."
-answerTrait = 1
+answerText = "De hecho conozco ejercicios de enfriamiento si ocupas"
+answerTrait = 5
 
 [sub_resource type="Resource" id="Resource_ulgns"]
 script = ExtResource("2_pu8y0")
-answerText = "Hi (why didnt you text me)"
-answerTrait = 2
+answerText = "nioooo porke?? :c acuestateee descansa u.u"
+answerTrait = 3
 
 [sub_resource type="Resource" id="Resource_w0ymg"]
 script = ExtResource("1_1f4o1")
-promptText = "Omg hi"
+promptText = "Nombe yo vengo bieeen adolorido del gym hahaha ocupo masaje...te apuntas?"
 answer1 = SubResource("Resource_y2i68")
 answer2 = SubResource("Resource_xkqvf")
 answer3 = SubResource("Resource_ulgns")
 
 [sub_resource type="Resource" id="Resource_fqm7u"]
 script = ExtResource("2_pu8y0")
-answerText = "I love sonic yay"
-answerTrait = 0
+answerText = "Mmm y porque no me llevaste?  -.-"
+answerTrait = 2
 
 [sub_resource type="Resource" id="Resource_c4fco"]
 script = ExtResource("2_pu8y0")
-answerText = "Hello"
-answerTrait = 1
+answerText = "Ah apoco conoces a mi tio?"
+answerTrait = 4
 
 [sub_resource type="Resource" id="Resource_ncrps"]
 script = ExtResource("2_pu8y0")
-answerText = "Skibidi toilet"
-answerTrait = 2
+answerText = "y si mejor vamos a un museo? e.e"
+answerTrait = 5
 
 [sub_resource type="Resource" id="Resource_gg0e8"]
 script = ExtResource("1_1f4o1")
-promptText = "Ummm hi hello"
+promptText = "Nombe hahaha y agarrate...conozco al dueño del sonora grill, igual no se si lo sacas"
 answer1 = SubResource("Resource_fqm7u")
 answer2 = SubResource("Resource_c4fco")
 answer3 = SubResource("Resource_ncrps")
 
 [sub_resource type="Resource" id="Resource_fdqa0"]
 script = ExtResource("2_pu8y0")
-answerText = "Skibidi"
+answerText = "y si se reclina padre el asientoo? "
 answerTrait = 0
 
 [sub_resource type="Resource" id="Resource_epc4s"]
 script = ExtResource("2_pu8y0")
-answerText = "Yahooooo"
-answerTrait = 2
+answerText = "Emm...cuantos cilindros tiene?"
+answerTrait = 5
 
 [sub_resource type="Resource" id="Resource_ao7oc"]
 script = ExtResource("2_pu8y0")
-answerText = "Epicness incorporated"
-answerTrait = 3
+answerText = "Mejor yo paso por ti en el Mercedes bebe ;)"
+answerTrait = 4
 
 [sub_resource type="Resource" id="Resource_j4lis"]
 script = ExtResource("1_1f4o1")
-promptText = "Whats vibes yay"
+promptText = "Tons q? Te llevo en mi carro proyecto, nomas le arreglo la transmisión"
 answer1 = SubResource("Resource_fdqa0")
 answer2 = SubResource("Resource_epc4s")
 answer3 = SubResource("Resource_ao7oc")
+
+[sub_resource type="Resource" id="Resource_ry56l"]
+script = ExtResource("2_pu8y0")
+answerText = "A mi no me regañan, yo regaño -.-"
+answerTrait = 2
+
+[sub_resource type="Resource" id="Resource_apyt7"]
+script = ExtResource("2_pu8y0")
+answerText = "ainssss pues si, pero ven a comer n.n"
+answerTrait = 3
+
+[sub_resource type="Resource" id="Resource_grb5k"]
+script = ExtResource("2_pu8y0")
+answerText = "Pues depende"
+answerTrait = 1
+
+[sub_resource type="Resource" id="Resource_42fvk"]
+script = ExtResource("1_1f4o1")
+promptText = "Oye si le caes? O te regañan en tu casa hahahaha"
+answer1 = SubResource("Resource_ry56l")
+answer2 = SubResource("Resource_apyt7")
+answer3 = SubResource("Resource_grb5k")
+
+[sub_resource type="Resource" id="Resource_xt3re"]
+script = ExtResource("2_pu8y0")
+answerText = "esta hermosooo!!! como tuuu n.n"
+answerTrait = 3
+
+[sub_resource type="Resource" id="Resource_t75v6"]
+script = ExtResource("2_pu8y0")
+answerText = "Te ves mal, mejor quitatelo"
+answerTrait = 2
+
+[sub_resource type="Resource" id="Resource_e7phd"]
+script = ExtResource("2_pu8y0")
+answerText = "que lindooos...pero se verian mejor SOBRE mi ;)"
+answerTrait = 0
+
+[sub_resource type="Resource" id="Resource_luxya"]
+script = ExtResource("1_1f4o1")
+promptText = "Oye hahahaha y que opinas de mi tatuaje? Me lo hice ayer hahaha"
+answer1 = SubResource("Resource_xt3re")
+answer2 = SubResource("Resource_t75v6")
+answer3 = SubResource("Resource_e7phd")
+
+[sub_resource type="Resource" id="Resource_8eda3"]
+script = ExtResource("2_pu8y0")
+answerText = "niooooo :c te preparo una chanwisss n.n jeje"
+answerTrait = 3
+
+[sub_resource type="Resource" id="Resource_sjs40"]
+script = ExtResource("2_pu8y0")
+answerText = "Mm ocupas que le caiga? "
+answerTrait = 0
+
+[sub_resource type="Resource" id="Resource_v75j4"]
+script = ExtResource("2_pu8y0")
+answerText = "No hay restaurante en tu trabajo? :s"
+answerTrait = 4
+
+[sub_resource type="Resource" id="Resource_48f11"]
+script = ExtResource("1_1f4o1")
+promptText = "Mmmta vine al trabajo y se me olvido de comer hahaha"
+answer1 = SubResource("Resource_8eda3")
+answer2 = SubResource("Resource_sjs40")
+answer3 = SubResource("Resource_v75j4")
 
 [resource]
 script = ExtResource("2_0phss")
@@ -83,4 +149,4 @@ postive1 = 0
 postive2 = 3
 negative1 = 1
 negative2 = 2
-prompts = Array[ExtResource("1_1f4o1")]([SubResource("Resource_w0ymg"), SubResource("Resource_gg0e8"), SubResource("Resource_j4lis")])
+prompts = Array[ExtResource("1_1f4o1")]([SubResource("Resource_w0ymg"), SubResource("Resource_gg0e8"), SubResource("Resource_j4lis"), SubResource("Resource_42fvk"), SubResource("Resource_luxya"), SubResource("Resource_48f11")])

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=17 format=3 uid="uid://dkc2f6fd603df"]
+[gd_resource type="Resource" script_class="Character" load_steps=26 format=3 uid="uid://dkc2f6fd603df"]
 
 [ext_resource type="Texture2D" uid="uid://xj328fr84qkw" path="res://ui/abi.png" id="1_coymd"]
 [ext_resource type="Script" path="res://resource/prompt.gd" id="1_lmeaw"]
@@ -7,69 +7,117 @@
 
 [sub_resource type="Resource" id="Resource_y2i68"]
 script = ExtResource("2_bqnll")
-answerText = "Hiiiiiii :3"
+answerText = "Escorpio...el que ama intenso..."
 answerTrait = 0
 
 [sub_resource type="Resource" id="Resource_xkqvf"]
 script = ExtResource("2_bqnll")
-answerText = "Hi."
+answerText = "No se. X."
 answerTrait = 1
 
 [sub_resource type="Resource" id="Resource_ulgns"]
 script = ExtResource("2_bqnll")
-answerText = "Hi (why didnt you text me)"
-answerTrait = 2
+answerText = "Eso ni si quiera es real eh. e.e"
+answerTrait = 5
 
 [sub_resource type="Resource" id="Resource_w0ymg"]
 script = ExtResource("1_lmeaw")
-promptText = "Omg hi"
+promptText = "oliii (agacha la cabeza) oieee cual es tu signo zodiacal??? n.n"
 answer1 = SubResource("Resource_y2i68")
 answer2 = SubResource("Resource_xkqvf")
 answer3 = SubResource("Resource_ulgns")
 
 [sub_resource type="Resource" id="Resource_fqm7u"]
 script = ExtResource("2_bqnll")
-answerText = "I love sonic yay"
-answerTrait = 0
+answerText = "Ay ya no seas ridicula."
+answerTrait = 2
 
 [sub_resource type="Resource" id="Resource_c4fco"]
 script = ExtResource("2_bqnll")
-answerText = "Hello"
-answerTrait = 1
+answerText = "chiiii te daria hojitas y todo :3 n.n"
+answerTrait = 3
 
 [sub_resource type="Resource" id="Resource_ncrps"]
 script = ExtResource("2_bqnll")
-answerText = "Skibidi toilet"
-answerTrait = 2
+answerText = "Emmm eso es fisicamente imposible..."
+answerTrait = 5
 
 [sub_resource type="Resource" id="Resource_gg0e8"]
 script = ExtResource("1_lmeaw")
-promptText = "Ummm hi hello"
+promptText = "aiii oie, peroo si me quisieras si fuera un gusanitoo? :c asi chikitoo'"
 answer1 = SubResource("Resource_fqm7u")
 answer2 = SubResource("Resource_c4fco")
 answer3 = SubResource("Resource_ncrps")
 
 [sub_resource type="Resource" id="Resource_fdqa0"]
 script = ExtResource("2_bqnll")
-answerText = "Skibidi"
+answerText = "Lo que gustes a la hora que ocupes"
 answerTrait = 0
 
 [sub_resource type="Resource" id="Resource_epc4s"]
 script = ExtResource("2_bqnll")
-answerText = "Yahooooo"
-answerTrait = 2
+answerText = "el loboo para cuidar a mi lobita n.n :3"
+answerTrait = 3
 
 [sub_resource type="Resource" id="Resource_ao7oc"]
 script = ExtResource("2_bqnll")
-answerText = "Epicness incorporated"
-answerTrait = 3
+answerText = "Vampiro creo?"
+answerTrait = 1
 
 [sub_resource type="Resource" id="Resource_j4lis"]
 script = ExtResource("1_lmeaw")
-promptText = "Whats vibes yay"
+promptText = "ayyy oie...y...eres mas vampirooo o hombre lobo? (se esconde por pena) ;w;''"
 answer1 = SubResource("Resource_fdqa0")
 answer2 = SubResource("Resource_epc4s")
 answer3 = SubResource("Resource_ao7oc")
+
+[sub_resource type="Resource" id="Resource_ljjy0"]
+script = ExtResource("2_bqnll")
+answerText = "MM si, pero yo me quedo unas para mi"
+answerTrait = 0
+
+[sub_resource type="Resource" id="Resource_70byf"]
+script = ExtResource("2_bqnll")
+answerText = "Pues si tienes camara esta bn."
+answerTrait = 1
+
+[sub_resource type="Resource" id="Resource_wcj24"]
+script = ExtResource("2_bqnll")
+answerText = "Mm..en que camara? Tengo una Kodak o una Canon...tu eliges."
+answerTrait = 4
+
+[sub_resource type="Resource" id="Resource_v74c7"]
+script = ExtResource("1_lmeaw")
+promptText = "oieee y si sabes tomar fotoss?? asi para mi floog n.n'' jeje"
+answer1 = SubResource("Resource_ljjy0")
+answer2 = SubResource("Resource_70byf")
+answer3 = SubResource("Resource_wcj24")
+
+[sub_resource type="Resource" id="Resource_fuorg"]
+script = ExtResource("1_lmeaw")
+promptText = "oieee y a que restaurante m llevarias o keee? n.n"
+
+[sub_resource type="Resource" id="Resource_bgyrp"]
+script = ExtResource("2_bqnll")
+answerText = "Justo traje unos de McAllen...para traertelos"
+answerTrait = 4
+
+[sub_resource type="Resource" id="Resource_5osga"]
+script = ExtResource("2_bqnll")
+answerText = "No los saco pero va"
+answerTrait = 1
+
+[sub_resource type="Resource" id="Resource_qrpvb"]
+script = ExtResource("2_bqnll")
+answerText = "CHIIII del mismo color y ashi n.n ainsss''"
+answerTrait = 3
+
+[sub_resource type="Resource" id="Resource_0addw"]
+script = ExtResource("1_lmeaw")
+promptText = "omg compramos unos brazaletitos de gomita??? los amooo ;n;"
+answer1 = SubResource("Resource_bgyrp")
+answer2 = SubResource("Resource_5osga")
+answer3 = SubResource("Resource_qrpvb")
 
 [resource]
 script = ExtResource("3_lvd6s")
@@ -81,6 +129,6 @@ trait1 = 2
 trait2 = 1
 postive1 = 2
 postive2 = 1
-negative1 = 3
-negative2 = 4
-prompts = Array[ExtResource("1_lmeaw")]([SubResource("Resource_w0ymg"), SubResource("Resource_gg0e8"), SubResource("Resource_j4lis")])
+negative1 = 4
+negative2 = 5
+prompts = Array[ExtResource("1_lmeaw")]([SubResource("Resource_w0ymg"), SubResource("Resource_gg0e8"), SubResource("Resource_j4lis"), SubResource("Resource_v74c7"), SubResource("Resource_fuorg"), SubResource("Resource_0addw")])
