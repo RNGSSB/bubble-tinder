@@ -1,5 +1,6 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cgjx86ikwwdj4"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ilmfrrwb4kap"]
 
+[ext_resource type="FontFile" uid="uid://osy3lswlqjww" path="res://ui/fonts/Coolvetica Rg.otf" id="1_agdan"]
 [ext_resource type="FontFile" uid="uid://bp3c2cmvravav" path="res://ui/fonts/Vipnagorgialla Bd It.otf" id="1_vhcum"]
 
 [sub_resource type="FontVariation" id="FontVariation_ytfpp"]
@@ -13,6 +14,8 @@ variation_embolden = 0.29
 spacing_glyph = -3
 
 [resource]
+LineEdit/font_sizes/font_size = 37
+LineEdit/fonts/font = ExtResource("1_agdan")
 RichTextLabel/constants/line_separation = 2
 RichTextLabel/constants/outline_size = 23
 RichTextLabel/constants/table_v_separation = -3

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://character_manager.gd" id="1_ucxrb"]
 [ext_resource type="Resource" uid="uid://d3rylo21midn4" path="res://resource/characters/goth.tres" id="2_0iqh2"]
 [ext_resource type="Resource" uid="uid://cdq7bw6swgqp6" path="res://resource/characters/gymbro.tres" id="3_oyct8"]
-[ext_resource type="Resource" uid="uid://dsafd8u62l41j" path="res://resource/characters/cutie.tres" id="4_l2pjf"]
+[ext_resource type="Resource" uid="uid://dkc2f6fd603df" path="res://resource/characters/cutie.tres" id="4_l2pjf"]
 
 [node name="CharacterManager" type="Node"]
 script = ExtResource("1_ucxrb")

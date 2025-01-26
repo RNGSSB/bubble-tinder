@@ -1,12 +1,13 @@
-extends Node2D
+extends Control
 
-@onready var playerText = $LineEdit
-@onready var labelAwesome = $EpicLabel
+@onready var playerText = $"Typing/Line Edit/MarginContainer/Line Edit"
+@onready var labelAwesome = $"Typing/Option 1/MarginContainer/RichTextLabel"
 @onready var currentCharacter = $Character
-@onready var answer1 = $Answer1
-@onready var answer2 = $Answer2
-@onready var answer3 = $Answer3
-@onready var displayPrompt = $displayPrompt
+@onready var answer1 = $"Options/Option 1"
+@onready var answer2 = $"Options/Option 2"
+@onready var answer3 = $"Options/Option 3"
+@onready var typingPanel = $Typing
+@onready var optionsPanel = $Options
 @export var currentPrompt = 0
 var prompt = "Select an answer"
 var promptTrait = Traits.Traits.FLIRTY
@@ -26,12 +27,15 @@ func _ready():
 	#else:
 	#	position = Vector2(1039,380)
 	
-	#if is_multiplayer_authority():
-	#	playerText.editable = true
-	#	playerText.focus_mode = 3
-	#else:
-	#	playerText.editable = false
-	#	playerText.focus_mode = 0
+	if is_multiplayer_authority():
+		playerText.editable = true
+		playerText.focus_mode = 3
+	else:
+		playerText.process_mode = Node.PROCESS_MODE_DISABLED
+		answer1.process_mode = Node.PROCESS_MODE_DISABLED
+		answer2.process_mode = Node.PROCESS_MODE_DISABLED
+		answer3.process_mode = Node.PROCESS_MODE_DISABLED
+		playerText.focus_mode = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,9 +43,9 @@ func _process(delta):
 	if ScoreManager.currentRound == 7:
 		isJaja = true
 	if isJaja == true:
-		answer1.disabled = true
-		answer2.disabled = true
-		answer3.disabled = true
+		answer1.get_node("Text Message").disabled = true
+		answer2.get_node("Text Message").disabled = true
+		answer3.get_node("Text Message").disabled = true
 		playerText.focus_mode = 2
 
 func _on_line_edit_text_submitted(new_text):
@@ -74,7 +78,6 @@ func on_score_updated():
 	# Generate a new prompt
 
 func _on_line_edit_text_changed(new_text):
-	
 	var idk = ""
 
 	if new_text.length() == prompt.length():
@@ -118,32 +121,48 @@ func _on_line_edit_text_changed(new_text):
 func changeCurrentPrompt(prompt_number):
 	rpc_change_prompt.rpc(prompt_number)
 
-@rpc("any_peer", "call_local", "reliable")
+@rpc("authority", "call_local", "reliable")
 func rpc_change_prompt(prompt_number):
 	prompt = "Select an answer"
 	playerText.focus_mode = 0
 	playerText.text = ""
 	currentPrompt = prompt_number
-	displayPrompt.text = CharacterManager.current_character.prompts[currentPrompt].promptText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
-	answer1.text = CharacterManager.current_character.prompts[currentPrompt].answer1.answerText
-	answer2.text = CharacterManager.current_character.prompts[currentPrompt].answer2.answerText
-	answer3.text = CharacterManager.current_character.prompts[currentPrompt].answer3.answerText
+	answer1.get_node("MarginContainer/RichTextLabel").text = CharacterManager.current_character.prompts[currentPrompt].answer1.answerText
+	answer2.get_node("MarginContainer/RichTextLabel").text = CharacterManager.current_character.prompts[currentPrompt].answer2.answerText
+	answer3.get_node("MarginContainer/RichTextLabel").text = CharacterManager.current_character.prompts[currentPrompt].answer3.answerText
+	show_options.rpc()
 
 func _on_answer_1_pressed():
 	prompt = CharacterManager.current_character.prompts[currentPrompt].answer1.answerText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
 	promptTrait = CharacterManager.current_character.prompts[currentPrompt].answer1.answerTrait
 	playerText.focus_mode = 2
+	playerText.grab_focus()
+	answer_chosen.rpc()
 
 func _on_answer_2_pressed():
 	prompt = CharacterManager.current_character.prompts[currentPrompt].answer2.answerText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
 	promptTrait = CharacterManager.current_character.prompts[currentPrompt].answer2.answerTrait
 	playerText.focus_mode = 2
+	playerText.grab_focus()
+	answer_chosen.rpc()
 
 func _on_answer_3_pressed():
 	prompt = CharacterManager.current_character.prompts[currentPrompt].answer3.answerText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
 	promptTrait = CharacterManager.current_character.prompts[currentPrompt].answer3.answerTrait
 	playerText.focus_mode = 2
+	playerText.grab_focus()
+	answer_chosen.rpc()
+
+@rpc("any_peer", "call_local", "reliable")
+func answer_chosen():
+	optionsPanel.visible = false
+	typingPanel.visible = true
+
+@rpc("any_peer", "call_local", "reliable")
+func show_options():
+	optionsPanel.visible = true
+	typingPanel.visible = false
