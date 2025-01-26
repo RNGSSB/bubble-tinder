@@ -24,4 +24,5 @@ func _on_setup_has_confirmed_both() -> void:
 @rpc("call_local", "reliable", "any_peer")
 func _transition_to_typing():
 	print("HAS TRNASITIONED TO THE TYPING STATE")
+	AudioManager.start.play()
 	Transitioned.emit(self, "typing")

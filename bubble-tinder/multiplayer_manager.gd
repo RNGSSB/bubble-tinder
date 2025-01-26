@@ -9,6 +9,7 @@ var peer = ENetMultiplayerPeer.new()
 var current_player_ID = 0
 
 func _on_host_pressed():
+	AudioManager.buttonPress.play()
 	peer.create_server(80)
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(_add_second_player)
@@ -40,7 +41,8 @@ func _verify_has_two_players():
 			$"../StateMachine".rpc("change_state", "Setup")
 
 func _on_join_pressed():
-	peer.create_client("localhost", 80)
+	AudioManager.buttonPress.play()
+	peer.create_client("169.254.212.37", 80)
 	multiplayer.multiplayer_peer = peer
 	print("I am a peer ..." + str(multiplayer.get_unique_id()))
 

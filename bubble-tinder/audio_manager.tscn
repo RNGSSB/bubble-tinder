@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://cl6y3m21v1n7o"]
+
+[ext_resource type="Script" path="res://scripts/audio_manager.gd" id="1_x4kvq"]
+[ext_resource type="AudioStream" uid="uid://dxxt7bj18mq8m" path="res://sfx/keypress.wav" id="2_tbs4r"]
+[ext_resource type="AudioStream" uid="uid://dnbblm3p7allj" path="res://sfx/wrong-47985.mp3" id="3_0totr"]
+[ext_resource type="AudioStream" uid="uid://cy5ck1e7qnoq4" path="res://sfx/bubble-pop-283674.mp3" id="3_aipl8"]
+[ext_resource type="AudioStream" uid="uid://dua31iklyhhvs" path="res://sfx/jingle.wav" id="5_1iovl"]
+[ext_resource type="AudioStream" uid="uid://cuty01c1cc4lo" path="res://sfx/mouse-click-290204.mp3" id="5_eexns"]
+[ext_resource type="AudioStream" uid="uid://brtv7pry4watv" path="res://sfx/start.wav" id="6_5p1r2"]
+[ext_resource type="AudioStream" uid="uid://ca33x606cd6bb" path="res://sfx/hurryup.wav" id="8_goi6l"]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_x4kvq")
+
+[node name="Keyboard" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_tbs4r")
+
+[node name="MessageSent" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_aipl8")
+
+[node name="Wrong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0totr")
+
+[node name="ButtonPress" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_eexns")
+
+[node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Jingle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_1iovl")
+volume_db = -17.349
+
+[node name="Start" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_5p1r2")
+
+[node name="HurryUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_goi6l")

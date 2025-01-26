@@ -46,6 +46,7 @@ func _process(delta):
 				playerText.focus_mode = 2
 				playerText.grab_focus()
 				playerText.accept_event()
+				AudioManager.hurryUp.play()
 				answer_chosen.rpc()
 		isJaja = true
 	if isJaja == true:
@@ -63,8 +64,10 @@ func _on_line_edit_text_submitted():
 		if(new_text == prompt):
 			print("YES!")
 			ScoreManager.add_player_msg_to_chat(name.to_int(), new_text)
+			AudioManager.messageSend.play()
 			ScoreManager.add_player_score(name.to_int(), calculateScore())
 		else:
+			AudioManager.wrong.play()
 			print("NO!")
 
 func calculateFinalRound():
@@ -97,6 +100,10 @@ func on_score_updated():
 	# Generate a new prompt
 
 func _on_line_edit_text_changed():
+	var rng = RandomNumberGenerator.new()
+	var my_random_number = rng.randf_range(0.5, 1.5)
+	AudioManager.keyboard1.pitch_scale = my_random_number
+	AudioManager.keyboard1.play()
 	var new_text = playerText.text
 	var idk = ""
 
@@ -162,6 +169,7 @@ func _on_answer_1_pressed():
 	prompt = CharacterManager.current_character.prompts[currentPrompt].answer1.answerText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
 	promptTrait = CharacterManager.current_character.prompts[currentPrompt].answer1.answerTrait
+	AudioManager.buttonPress.play()
 	playerText.focus_mode = 2
 	playerText.grab_focus()
 	playerText.accept_event()
@@ -171,6 +179,7 @@ func _on_answer_2_pressed():
 	prompt = CharacterManager.current_character.prompts[currentPrompt].answer2.answerText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
 	promptTrait = CharacterManager.current_character.prompts[currentPrompt].answer2.answerTrait
+	AudioManager.buttonPress.play()
 	playerText.focus_mode = 2
 	playerText.grab_focus()
 	playerText.accept_event()
@@ -180,6 +189,7 @@ func _on_answer_3_pressed():
 	prompt = CharacterManager.current_character.prompts[currentPrompt].answer3.answerText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
 	promptTrait = CharacterManager.current_character.prompts[currentPrompt].answer3.answerTrait
+	AudioManager.buttonPress.play()
 	playerText.focus_mode = 2
 	playerText.grab_focus()
 	playerText.accept_event()

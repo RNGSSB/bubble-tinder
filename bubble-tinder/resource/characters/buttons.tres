@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://ds4mk6rh0dvil"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bvfnn3meximla"]
 
 [ext_resource type="Texture2D" uid="uid://cv8hvhf8g7wjf" path="res://ui/imgs/9_slice_button.png" id="1_hi82q"]
 [ext_resource type="FontFile" uid="uid://osy3lswlqjww" path="res://ui/fonts/Coolvetica Rg.otf" id="1_j2rgo"]

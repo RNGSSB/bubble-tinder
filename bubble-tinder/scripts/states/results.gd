@@ -22,6 +22,7 @@ func Physics_Update(delta: float):
 func set_results_finally():
 	print("-------------")
 	print("I HAVE ENOUGH FOR RESULTS, PLEASE SET APPROPRIATELY")
+	AudioManager.jingle.play()
 	var win_manager = $"../../PLAY_UI".get_node("Winning Elements")
 	if ScoreManager.player1score > ScoreManager.player2score:
 		win_manager.set_win_images(1)

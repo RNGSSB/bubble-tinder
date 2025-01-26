@@ -50,6 +50,7 @@ func player_ready():
 	t.tween_property(get_parent(), "scale", Vector2(1.2, 1.2), 0.1).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	t.set_parallel()
 	t.tween_property(get_parent(), "rotation", onpress_rotation, 0.2).set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT).as_relative()
+	AudioManager.buttonPress.play()
 	print("I've emitted the signal: " + get_parent().name)
 	player_has_confirmed = true
 	player_confirm_signal.emit()
