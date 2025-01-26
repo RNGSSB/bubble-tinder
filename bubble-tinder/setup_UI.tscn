@@ -165,7 +165,12 @@ bbcode_enabled = true
 text = "[b]juanpi, 28"
 fit_content = true
 
-[node name="Player 1" type="Control" parent="."]
+[node name="Setup Elements" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Player 1" type="Control" parent="Setup Elements"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -173,18 +178,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="player 1" type="Panel" parent="Player 1"]
+[node name="player 1" type="Panel" parent="Setup Elements/Player 1"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -374.0
+offset_top = 135.0
 offset_right = 469.0
-offset_bottom = -301.0
+offset_bottom = 208.0
 grow_vertical = 2
 theme = ExtResource("4_pbehu")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Player 1/player 1"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Setup Elements/Player 1/player 1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -197,10 +202,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_bdfsv")
 bbcode_enabled = true
-text = "player 2"
+text = "player 1"
 fit_content = true
 
-[node name="TextureButton" type="TextureButton" parent="Player 1"]
+[node name="TextureButton" type="TextureButton" parent="Setup Elements/Player 1"]
 layout_mode = 0
 offset_left = 227.0
 offset_top = 353.0
@@ -215,16 +220,16 @@ texture_hover = ExtResource("8_mvalt")
 texture_disabled = ExtResource("7_la3f5")
 stretch_mode = 5
 
-[node name="Player 1 Button" type="Node" parent="Player 1/TextureButton"]
+[node name="Player 1 Button" type="Node" parent="Setup Elements/Player 1/TextureButton"]
 script = ExtResource("9_30u41")
 onpress_rotation = 0.4
 
-[node name="Player 2" type="Control" parent="."]
+[node name="Player 2" type="Control" parent="Setup Elements"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureButton2" type="TextureButton" parent="Player 2"]
+[node name="TextureButton2" type="TextureButton" parent="Setup Elements/Player 2"]
 layout_mode = 0
 offset_left = 1500.0
 offset_top = 336.0
@@ -239,12 +244,12 @@ texture_hover = ExtResource("8_mvalt")
 texture_disabled = ExtResource("7_la3f5")
 stretch_mode = 5
 
-[node name="Player 2 Button" type="Node" parent="Player 2/TextureButton2"]
+[node name="Player 2 Button" type="Node" parent="Setup Elements/Player 2/TextureButton2"]
 script = ExtResource("9_30u41")
 onpress_rotation = 0.4
 player_number = 2
 
-[node name="player 2" type="Panel" parent="Player 2"]
+[node name="player 2" type="Panel" parent="Setup Elements/Player 2"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -259,7 +264,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("4_pbehu")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Player 2/player 2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Setup Elements/Player 2/player 2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -278,11 +283,11 @@ fit_content = true
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_l31ag")
 
-[connection signal="mouse_entered" from="Player 1/TextureButton" to="Player 1/TextureButton/Player 1 Button" method="_on_button_hover_anim"]
-[connection signal="mouse_exited" from="Player 1/TextureButton" to="Player 1/TextureButton/Player 1 Button" method="_on_button_unhover_anim"]
-[connection signal="pressed" from="Player 1/TextureButton" to="Player 1/TextureButton/Player 1 Button" method="_on_button_press_anim"]
-[connection signal="player_confirm_signal" from="Player 1/TextureButton/Player 1 Button" to="." method="_on_player_confirm"]
-[connection signal="mouse_entered" from="Player 2/TextureButton2" to="Player 2/TextureButton2/Player 2 Button" method="_on_button_hover_anim"]
-[connection signal="mouse_exited" from="Player 2/TextureButton2" to="Player 2/TextureButton2/Player 2 Button" method="_on_button_unhover_anim"]
-[connection signal="pressed" from="Player 2/TextureButton2" to="Player 2/TextureButton2/Player 2 Button" method="_on_button_press_anim"]
-[connection signal="player_confirm_signal" from="Player 2/TextureButton2/Player 2 Button" to="." method="_on_player_confirm"]
+[connection signal="mouse_entered" from="Setup Elements/Player 1/TextureButton" to="Setup Elements/Player 1/TextureButton/Player 1 Button" method="_on_button_hover_anim"]
+[connection signal="mouse_exited" from="Setup Elements/Player 1/TextureButton" to="Setup Elements/Player 1/TextureButton/Player 1 Button" method="_on_button_unhover_anim"]
+[connection signal="pressed" from="Setup Elements/Player 1/TextureButton" to="Setup Elements/Player 1/TextureButton/Player 1 Button" method="_on_button_press_anim"]
+[connection signal="player_confirm_signal" from="Setup Elements/Player 1/TextureButton/Player 1 Button" to="." method="_on_player_confirm"]
+[connection signal="mouse_entered" from="Setup Elements/Player 2/TextureButton2" to="Setup Elements/Player 2/TextureButton2/Player 2 Button" method="_on_button_hover_anim"]
+[connection signal="mouse_exited" from="Setup Elements/Player 2/TextureButton2" to="Setup Elements/Player 2/TextureButton2/Player 2 Button" method="_on_button_unhover_anim"]
+[connection signal="pressed" from="Setup Elements/Player 2/TextureButton2" to="Setup Elements/Player 2/TextureButton2/Player 2 Button" method="_on_button_press_anim"]
+[connection signal="player_confirm_signal" from="Setup Elements/Player 2/TextureButton2/Player 2 Button" to="." method="_on_player_confirm"]

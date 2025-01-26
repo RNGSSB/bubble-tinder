@@ -8,8 +8,8 @@ func Enter():
 	owner.stateLabel.text = owner.CURRSTATE
 	# Start checking authority for the setup buttons
 	print("IM CHECKING THE AUTHORITY!")
-	$SETUP.visible = true
-	$SETUP.check_authority()
+	$"../../PLAY_UI".visible = true
+	$"../../PLAY_UI".check_authority()
 	
 
 func Update(_delta: float):
