@@ -1,14 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://bhou1pko4hqjr"]
+[gd_scene load_steps=11 format=3 uid="uid://cahya0186gp0l"]
 
 [ext_resource type="Script" path="res://scripts/game_system.gd" id="1_b86r6"]
 [ext_resource type="Script" path="res://scripts/StateMachine.gd" id="2_7kcuf"]
 [ext_resource type="Script" path="res://scripts/states/setup.gd" id="3_600sm"]
 [ext_resource type="Script" path="res://scripts/states/typing.gd" id="4_gq7kg"]
-[ext_resource type="PackedScene" path="res://setup_UI.tscn" id="4_r0yjy"]
+[ext_resource type="PackedScene" uid="uid://bgfkkk2bdt01r" path="res://setup_UI.tscn" id="4_r0yjy"]
 [ext_resource type="Script" path="res://multiplayer_manager.gd" id="6_drphp"]
 [ext_resource type="Script" path="res://lobby.gd" id="6_wfmck"]
 [ext_resource type="Script" path="res://typing_spawner.gd" id="7_1sytp"]
-[ext_resource type="PackedScene" path="res://player_id.tscn" id="7_t2gfb"]
+[ext_resource type="PackedScene" uid="uid://bo1cshuk8ubag" path="res://player_id.tscn" id="7_t2gfb"]
 [ext_resource type="PackedScene" uid="uid://c2dxtjhjbdftu" path="res://marioteachestyping.tscn" id="8_yemi3"]
 
 [node name="GAME" type="Node2D" node_paths=PackedStringArray("stateLabel", "timerLabel")]

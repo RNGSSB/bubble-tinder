@@ -43,19 +43,10 @@ func _process(delta):
 func _on_line_edit_text_submitted(new_text):
 	if(new_text == prompt):
 		print("YES!")
-		if name == str(1):
-			print("Player 1 Won")
-		else:
-			print("Player 2 Won")
-		call_score()
+		ScoreManager.add_player_score(name.to_int(), 1)
 		changeCurrentPrompt()
 	else:
 		print("NO!")
-
-@rpc("any_peer", "call_local", "reliable")
-func call_score():
-	print("p1: " + str(ScoreManager.player1score))
-	print("p2: " + str(ScoreManager.player2score))
 
 func _on_line_edit_text_changed(new_text):
 	
