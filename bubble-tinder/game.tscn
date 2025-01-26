@@ -32,14 +32,14 @@ text = "time"
 script = ExtResource("2_7kcuf")
 initial_state = NodePath("Lobby")
 
-[node name="SETUP" parent="StateMachine" instance=ExtResource("4_r0yjy")]
-visible = false
-
 [node name="Lobby" type="Node" parent="StateMachine"]
 script = ExtResource("6_wfmck")
 
 [node name="Setup" type="Node" parent="StateMachine"]
 script = ExtResource("3_600sm")
+
+[node name="SETUP" parent="StateMachine/Setup" instance=ExtResource("4_r0yjy")]
+visible = false
 
 [node name="Typing" type="Node" parent="StateMachine"]
 script = ExtResource("4_gq7kg")
@@ -67,7 +67,7 @@ text = "Join"
 _spawnable_scenes = PackedStringArray("res://player_id.tscn")
 spawn_path = NodePath("..")
 
-[connection signal="has_confirmed_both" from="StateMachine/SETUP" to="StateMachine/Setup" method="_on_setup_has_confirmed_both"]
-[connection signal="Transitioned" from="StateMachine/Setup" to="StateMachine/SETUP" method="_on_setup_transitioned"]
+[connection signal="Transitioned" from="StateMachine/Setup" to="StateMachine/Setup/SETUP" method="_on_setup_transitioned"]
+[connection signal="has_confirmed_both" from="StateMachine/Setup/SETUP" to="StateMachine/Setup" method="_on_setup_has_confirmed_both"]
 [connection signal="pressed" from="Multiplayer Manager/Host" to="Multiplayer Manager" method="_on_host_pressed"]
 [connection signal="pressed" from="Multiplayer Manager/Join" to="Multiplayer Manager" method="_on_join_pressed"]
