@@ -18,18 +18,11 @@ func _add_second_player(id = 1):
 	if id == 1:
 		return
 	print("I've added player: " + str(id))
-
 	player_two = player_ID_scene.instantiate()
 	player_two.name = str(id)
 	player_two.set_id(id)
 	call_deferred("add_child", player_two)
-	_rpc_assign_variables.rpc(player_one, player_two)
 	_verify_has_two_players()
-
-@rpc
-func _rpc_assign_variables(player_one_id, player_two_id):
-	player_one = player_one_id
-	player_two = player_two_id
 	
 	
 func _add_player(id = 1):
