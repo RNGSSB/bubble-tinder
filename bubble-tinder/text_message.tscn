@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dac47h4120ijf"]
+
+[ext_resource type="Texture2D" uid="uid://cv8hvhf8g7wjf" path="res://ui/imgs/9_slice_button.png" id="1_bjd4a"]
+[ext_resource type="FontFile" uid="uid://osy3lswlqjww" path="res://ui/fonts/Coolvetica Rg.otf" id="2_t0gu5"]
+
+[sub_resource type="Theme" id="Theme_me1rh"]
+MarginContainer/constants/margin_bottom = 8
+MarginContainer/constants/margin_left = 8
+MarginContainer/constants/margin_right = 8
+MarginContainer/constants/margin_top = 8
+
+[sub_resource type="Theme" id="Theme_elotl"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/line_separation = -9
+RichTextLabel/constants/text_highlight_h_padding = 18
+RichTextLabel/font_sizes/normal_font_size = 37
+RichTextLabel/fonts/normal_font = ExtResource("2_t0gu5")
+
+[node name="Text Message" type="MarginContainer"]
+theme = SubResource("Theme_me1rh")
+
+[node name="Text Message" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_bjd4a")
+patch_margin_left = 25
+patch_margin_top = 30
+patch_margin_right = 25
+patch_margin_bottom = 20
+axis_stretch_horizontal = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_elotl")
+bbcode_enabled = true
+text = "Pero algo tranqui eh?"
+fit_content = true

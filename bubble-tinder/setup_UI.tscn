@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bgfkkk2bdt01r"]
+[gd_scene load_steps=21 format=3 uid="uid://bgfkkk2bdt01r"]
 
 [ext_resource type="Script" path="res://setup_behavior.gd" id="1_hb5aq"]
 [ext_resource type="Texture2D" uid="uid://3me3yn4dqued" path="res://ui/mockups/setup.png" id="1_j7w3q"]
@@ -10,7 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://b30imwkp8if5x" path="res://ui/imgs/ok_button.png" id="6_jhxby"]
 [ext_resource type="Texture2D" uid="uid://ddnod1km4ksyk" path="res://ui/imgs/ok_button_pressed.png" id="7_la3f5"]
 [ext_resource type="Texture2D" uid="uid://cy2gydmd4mo8o" path="res://ui/imgs/ok_button_hover.png" id="8_mvalt"]
+[ext_resource type="Script" path="res://chatlog_manager.gd" id="8_xlceu"]
+[ext_resource type="Texture2D" uid="uid://cv8hvhf8g7wjf" path="res://ui/imgs/9_slice_button.png" id="8_xqkqv"]
+[ext_resource type="PackedScene" uid="uid://dac47h4120ijf" path="res://text_message.tscn" id="9_1w0vj"]
 [ext_resource type="Script" path="res://ok_button_anim.gd" id="9_30u41"]
+[ext_resource type="Texture2D" uid="uid://b3oh6tq5ll1je" path="res://ui/imgs/9_slice_button_2.png" id="10_jfk0v"]
+[ext_resource type="Texture2D" uid="uid://bvanbvs8nsvgt" path="res://ui/imgs/9_slice_button_3.png" id="12_o8dev"]
 [ext_resource type="Texture2D" uid="uid://cupk585ougbvt" path="res://art/player_one.png" id="12_qrt3m"]
 [ext_resource type="Texture2D" uid="uid://b33lf70n1m1hm" path="res://art/player_two.png" id="13_mvfnw"]
 
@@ -66,6 +71,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Profile Manager" type="Control" parent="Center Column"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -179,6 +185,26 @@ fit_content = true
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="Center Column/Profile Manager"]
 replication_config = SubResource("SceneReplicationConfig_245el")
 
+[node name="Chatlog" type="Control" parent="Center Column" node_paths=PackedStringArray("chatlog_container")]
+anchors_preset = 0
+offset_right = 638.0
+offset_bottom = 1073.0
+script = ExtResource("8_xlceu")
+text_message = ExtResource("9_1w0vj")
+chatlog_container = NodePath("VBoxContainer")
+player_one_tex = ExtResource("10_jfk0v")
+player_two_tex = ExtResource("8_xqkqv")
+npc_tex = ExtResource("12_o8dev")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center Column/Chatlog"]
+layout_mode = 0
+offset_right = 636.0
+offset_bottom = 1080.0
+alignment = 2
+
+[node name="Text Message" parent="Center Column/Chatlog/VBoxContainer" instance=ExtResource("9_1w0vj")]
+layout_mode = 2
+
 [node name="Setup Elements" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
@@ -208,10 +234,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = -50.0
-offset_right = 331.0
-offset_bottom = 24.0
+offset_left = 17.0
+offset_top = -53.0
+offset_right = 342.0
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_bdfsv")

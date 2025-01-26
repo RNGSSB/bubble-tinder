@@ -6,6 +6,7 @@ var player2score = 0
 var currentRound = 1
 
 signal on_player_score
+signal on_add_message_chat(id, str)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	currentRound = 1
@@ -15,9 +16,17 @@ func _ready():
 func _process(delta):
 	pass
 
+func add_player_msg_to_chat(id, str):
+	rpc_add_player_msg.rpc(id, str)
+	
 func add_player_score(id, amt):
 	rpc_add_player_score.rpc(id, amt)
 
+@rpc("any_peer", "call_local", "unreliable_ordered")
+func rpc_add_player_msg(id, str):
+	print("ADDING MESSAGE TO CHATLOG")
+	on_add_message_chat.emit(id, str)
+	
 @rpc("any_peer", "call_local", "unreliable_ordered")
 func rpc_add_player_score(id, amt):
 	if multiplayer.is_server() == false:
