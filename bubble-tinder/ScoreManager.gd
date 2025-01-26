@@ -33,7 +33,7 @@ func request_jajas():
 
 @rpc("any_peer", "call_local", "reliable")
 func set_jaja_value(player_id, jaja):
-	if is_multiplayer_authority() == false:
+	if multiplayer.is_server() == false:
 		return
 
 	if player_id == 1 and player_one_jaja == "":
@@ -43,10 +43,7 @@ func set_jaja_value(player_id, jaja):
 	
 	elif player_id != 1 and player_two_jaja == "":
 		player_two_jaja = jaja
-	
-	if multiplayer.is_server() == false:
-		return
-
+		
 	if player_one_jaja != "" and player_two_jaja != "":
 		#Both have been set so score them
 		if player_one_jaja.length() > player_two_jaja.length():

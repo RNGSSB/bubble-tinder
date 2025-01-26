@@ -43,9 +43,9 @@ func _process(delta):
 	if ScoreManager.currentRound == 7:
 		if isJaja == false:
 			# Enter haha mode
+			answer_chosen.rpc()
 			playerText.focus_mode = 2
 			playerText.grab_focus()
-			answer_chosen.rpc()
 		isJaja = true
 	if isJaja == true:
 		answer1.get_node("Text Message").disabled = true
