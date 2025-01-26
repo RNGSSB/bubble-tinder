@@ -9,7 +9,7 @@ func Enter():
 	# Start checking authority for the setup buttons
 	print("IM CHECKING THE AUTHORITY!")
 	$"../../PLAY_UI".visible = true
-	$"../../PLAY_UI".check_authority()
+	$"../../PLAY_UI".on_setup_start()
 	
 
 func Update(_delta: float):

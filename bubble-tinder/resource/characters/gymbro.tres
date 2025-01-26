@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://cdq7bw6swgqp6"]
+
+[ext_resource type="Script" path="res://resource/prompt.gd" id="1_1f4o1"]
+[ext_resource type="Script" path="res://resource/character.gd" id="2_0phss"]
+
+[resource]
+script = ExtResource("2_0phss")
+name = "Juanpi"
+age = 28
+description = "Me la vivo en el gym. 100kg PR. Pero hablame bonito ok? E igual alternamos peso muerto ;)"
+trait1 = 0
+trait2 = 2
+postive1 = 0
+postive2 = 3
+negative1 = 1
+negative2 = 2
+prompts = Array[ExtResource("1_1f4o1")]([])

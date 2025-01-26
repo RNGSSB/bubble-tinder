@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://blh4muv7nejjd"]
+
+[ext_resource type="Script" path="res://character_manager.gd" id="1_ucxrb"]
+[ext_resource type="Resource" uid="uid://d3rylo21midn4" path="res://resource/characters/goth.tres" id="2_0iqh2"]
+[ext_resource type="Resource" uid="uid://cdq7bw6swgqp6" path="res://resource/characters/gymbro.tres" id="3_oyct8"]
+[ext_resource type="Script" path="res://resource/prompt.gd" id="4_ut5l5"]
+[ext_resource type="Script" path="res://resource/character.gd" id="5_84a2m"]
+
+[sub_resource type="Resource" id="Resource_kiv1t"]
+script = ExtResource("5_84a2m")
+name = "abi"
+age = 26
+description = "<3 just a kitty girl <3 me gustariia que me escuchen, hablo mucho! y pues... asi <3 quiero que me quieran muchoo'"
+trait1 = 2
+trait2 = 1
+postive1 = 2
+postive2 = 1
+negative1 = 3
+negative2 = 4
+prompts = Array[ExtResource("4_ut5l5")]([])
+
+[node name="CharacterManager" type="Node"]
+script = ExtResource("1_ucxrb")
+character_list = [ExtResource("2_0iqh2"), ExtResource("3_oyct8"), SubResource("Resource_kiv1t")]

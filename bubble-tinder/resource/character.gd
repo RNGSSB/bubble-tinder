@@ -5,6 +5,7 @@ class_name Character
 @export var age = 20
 @export var description = ""
 
+@export var profile_picture : Texture2D
 
 @export var trait1 = Traits.Traits.FLIRTY
 @export var trait2 = Traits.Traits.TOXICO

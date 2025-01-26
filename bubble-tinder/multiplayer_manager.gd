@@ -40,7 +40,7 @@ func _verify_has_two_players():
 			$"../StateMachine".rpc("change_state", "Setup")
 
 func _on_join_pressed():
-	peer.create_client("169.254.212.37", 80)
+	peer.create_client("localhost", 80)
 	multiplayer.multiplayer_peer = peer
 	print("I am a peer ..." + str(multiplayer.get_unique_id()))
 

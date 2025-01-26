@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://d3rylo21midn4"]
+
+[ext_resource type="Script" path="res://resource/prompt.gd" id="1_5yat8"]
+[ext_resource type="Script" path="res://resource/character.gd" id="2_alpnb"]
+
+[resource]
+script = ExtResource("2_alpnb")
+name = "violetha*'"
+age = 28
+description = "L_L puro pxndx y asiii'. me gustan los inteligentes ._.' y que sean interesantes y cools."
+trait1 = 0
+trait2 = 2
+postive1 = 1
+postive2 = 2
+negative1 = 3
+negative2 = 0
+prompts = Array[ExtResource("1_5yat8")]([])

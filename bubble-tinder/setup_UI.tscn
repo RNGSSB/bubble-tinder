@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgfkkk2bdt01r"]
+[gd_scene load_steps=16 format=3 uid="uid://bgfkkk2bdt01r"]
 
 [ext_resource type="Script" path="res://setup_behavior.gd" id="1_hb5aq"]
 [ext_resource type="Texture2D" uid="uid://3me3yn4dqued" path="res://ui/mockups/setup.png" id="1_j7w3q"]
 [ext_resource type="Texture2D" uid="uid://u7xychm3oum3" path="res://ui/mockups/match_image.png" id="2_enhdr"]
+[ext_resource type="Script" path="res://profile_manager.gd" id="3_110sb"]
 [ext_resource type="Theme" uid="uid://dj865biutyflw" path="res://match_description.tres" id="3_ysciy"]
 [ext_resource type="Theme" uid="uid://c0xwktvuwulf1" path="res://name_panel_theme_UI.tres" id="4_pbehu"]
 [ext_resource type="Theme" uid="uid://ilmfrrwb4kap" path="res://theme_UI.tres" id="5_bdfsv"]
@@ -10,15 +11,19 @@
 [ext_resource type="Texture2D" uid="uid://ddnod1km4ksyk" path="res://ui/imgs/ok_button_pressed.png" id="7_la3f5"]
 [ext_resource type="Texture2D" uid="uid://cy2gydmd4mo8o" path="res://ui/imgs/ok_button_hover.png" id="8_mvalt"]
 [ext_resource type="Script" path="res://ok_button_anim.gd" id="9_30u41"]
+[ext_resource type="Texture2D" uid="uid://cupk585ougbvt" path="res://art/player_one.png" id="12_qrt3m"]
+[ext_resource type="Texture2D" uid="uid://b33lf70n1m1hm" path="res://art/player_two.png" id="13_mvfnw"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_245el"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_l31ag"]
-properties/0/path = NodePath("Player 1/TextureButton/Player 1 Button:player_has_confirmed")
+properties/0/path = NodePath(".:visible")
 properties/0/spawn = true
 properties/0/replication_mode = 1
-properties/1/path = NodePath("Player 2/TextureButton2/Player 2 Button:player_has_confirmed")
+properties/1/path = NodePath("Setup Elements/Player 1/TextureButton/Player 1 Button:player_has_confirmed")
 properties/1/spawn = true
 properties/1/replication_mode = 1
-properties/2/path = NodePath(".:visible")
+properties/2/path = NodePath("Setup Elements/Player 2/TextureButton2/Player 2 Button:player_has_confirmed")
 properties/2/spawn = true
 properties/2/replication_mode = 1
 
@@ -60,21 +65,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Match Picture Contain" type="Control" parent="Center Column"]
+[node name="Profile Manager" type="Control" parent="Center Column"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_110sb")
+
+[node name="Match Picture Contain" type="Control" parent="Center Column/Profile Manager"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -270.0
-offset_top = -445.0
-offset_right = 270.0
-offset_bottom = 247.0
+offset_left = 29.0
+offset_top = 75.0
+offset_right = 569.0
+offset_bottom = 767.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Center Column/Match Picture Contain"]
+[node name="Panel" type="Panel" parent="Center Column/Profile Manager/Match Picture Contain"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -82,7 +93,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Center Column/Match Picture Contain"]
+[node name="TextureRect" type="TextureRect" parent="Center Column/Profile Manager/Match Picture Contain"]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 8
@@ -99,21 +110,21 @@ grow_vertical = 2
 texture = ExtResource("2_enhdr")
 stretch_mode = 6
 
-[node name="Text and Emojis" type="Control" parent="Center Column"]
+[node name="Text and Emojis" type="Control" parent="Center Column/Profile Manager"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -270.0
-offset_top = 214.0
-offset_right = 270.0
-offset_bottom = 426.0
+offset_left = 29.0
+offset_top = 734.0
+offset_right = 569.0
+offset_bottom = 946.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Descripcion" type="PanelContainer" parent="Center Column/Text and Emojis"]
+[node name="Descripcion" type="PanelContainer" parent="Center Column/Profile Manager/Text and Emojis"]
 self_modulate = Color(0.320857, 0.350516, 9.62615e-08, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -130,12 +141,12 @@ grow_vertical = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.54
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Center Column/Text and Emojis/Descripcion"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Center Column/Profile Manager/Text and Emojis/Descripcion"]
 layout_mode = 2
 theme = ExtResource("3_ysciy")
 text = "Pero hablame bonito eh. Me la vivo en el gym, hacemos peso muerto de dos?"
 
-[node name="Name Box" type="Panel" parent="Center Column/Text and Emojis"]
+[node name="Name Box" type="Panel" parent="Center Column/Profile Manager/Text and Emojis"]
 layout_mode = 2
 offset_top = 25.0
 offset_right = 540.0
@@ -145,7 +156,7 @@ grow_vertical = 2
 size_flags_vertical = 3
 theme = ExtResource("4_pbehu")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Center Column/Text and Emojis/Name Box"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Center Column/Profile Manager/Text and Emojis/Name Box"]
 clip_contents = false
 layout_mode = 1
 anchors_preset = 8
@@ -153,10 +164,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -257.0
-offset_top = -69.0
-offset_right = 337.0
-offset_bottom = 65.0
+offset_left = -262.0
+offset_top = -61.0
+offset_right = 482.0
+offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
@@ -164,6 +175,9 @@ theme = ExtResource("5_bdfsv")
 bbcode_enabled = true
 text = "[b]juanpi, 28"
 fit_content = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="Center Column/Profile Manager"]
+replication_config = SubResource("SceneReplicationConfig_245el")
 
 [node name="Setup Elements" type="Control" parent="."]
 anchors_preset = 0
@@ -283,6 +297,35 @@ fit_content = true
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_l31ag")
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -859.0
+offset_top = -500.0
+offset_right = -359.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("12_qrt3m")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 400.0
+offset_top = -500.0
+offset_right = 900.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("13_mvfnw")
+
+[connection signal="on_select_character" from="." to="Center Column/Profile Manager" method="_on_select_character"]
 [connection signal="mouse_entered" from="Setup Elements/Player 1/TextureButton" to="Setup Elements/Player 1/TextureButton/Player 1 Button" method="_on_button_hover_anim"]
 [connection signal="mouse_exited" from="Setup Elements/Player 1/TextureButton" to="Setup Elements/Player 1/TextureButton/Player 1 Button" method="_on_button_unhover_anim"]
 [connection signal="pressed" from="Setup Elements/Player 1/TextureButton" to="Setup Elements/Player 1/TextureButton/Player 1 Button" method="_on_button_press_anim"]
