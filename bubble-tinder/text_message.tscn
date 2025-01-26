@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dac47h4120ijf"]
+[gd_scene load_steps=12 format=3 uid="uid://dac47h4120ijf"]
 
 [ext_resource type="Texture2D" uid="uid://cv8hvhf8g7wjf" path="res://ui/imgs/9_slice_button.png" id="1_bjd4a"]
 [ext_resource type="FontFile" uid="uid://osy3lswlqjww" path="res://ui/fonts/Coolvetica Rg.otf" id="2_t0gu5"]
@@ -55,6 +55,10 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hb4fi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h6w4c"]
+
 [sub_resource type="Theme" id="Theme_elotl"]
 LineEdit/colors/caret_color = Color(0, 0, 0, 1)
 LineEdit/colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
@@ -79,6 +83,13 @@ RichTextLabel/constants/line_separation = -9
 RichTextLabel/constants/text_highlight_h_padding = 18
 RichTextLabel/font_sizes/normal_font_size = 37
 RichTextLabel/fonts/normal_font = ExtResource("2_t0gu5")
+TextEdit/colors/caret_color = Color(0, 0, 0, 1)
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/colors/selection_color = Color(0.823212, 0.823212, 0.823212, 1)
+TextEdit/font_sizes/font_size = 37
+TextEdit/fonts/font = ExtResource("2_t0gu5")
+TextEdit/styles/focus = SubResource("StyleBoxEmpty_hb4fi")
+TextEdit/styles/normal = SubResource("StyleBoxEmpty_h6w4c")
 
 [node name="Text Message" type="MarginContainer"]
 theme = SubResource("Theme_me1rh")

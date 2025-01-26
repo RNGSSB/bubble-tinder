@@ -20,6 +20,7 @@ func _enter_tree():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_process_input(true)
 	ScoreManager.on_player_score.connect(on_score_updated)
 	CharacterManager.on_prompt_generated.connect(changeCurrentPrompt)
 	#if name == str(1):
@@ -42,6 +43,7 @@ func _ready():
 func _process(delta):
 	if ScoreManager.currentRound == 7:
 		if isJaja == false:
+			# Enter haha mode
 			playerText.focus_mode = 2
 			playerText.grab_focus()
 			answer_chosen.rpc()
@@ -52,8 +54,13 @@ func _process(delta):
 		answer1.get_node("Text Message").disabled = true
 		answer2.get_node("Text Message").disabled = true
 		answer3.get_node("Text Message").disabled = true
+		
+func _input(ev):
+	if Input.is_key_pressed(KEY_ENTER) and is_multiplayer_authority():
+		_on_line_edit_text_submitted()
 
-func _on_line_edit_text_submitted(new_text):
+func _on_line_edit_text_submitted():
+	var new_text = playerText.text
 	if isJaja == false:
 		if(new_text == prompt):
 			print("YES!")
@@ -86,7 +93,8 @@ func on_score_updated():
 	playerText.text = ""
 	# Generate a new prompt
 
-func _on_line_edit_text_changed(new_text):
+func _on_line_edit_text_changed():
+	var new_text = playerText.text
 	var idk = ""
 
 	if new_text.length() == prompt.length():
@@ -128,9 +136,10 @@ func _on_line_edit_text_changed(new_text):
 	labelAwesome.text = idk
 
 func changeCurrentPrompt(prompt_number):
+	playerText.text = ""
 	rpc_change_prompt.rpc(prompt_number)
 
-@rpc("authority", "call_local", "reliable")
+@rpc("any_peer", "call_local", "reliable")
 func rpc_change_prompt(prompt_number):
 	prompt = "Select an answer"
 	playerText.focus_mode = 0
@@ -140,7 +149,8 @@ func rpc_change_prompt(prompt_number):
 	answer1.get_node("MarginContainer/RichTextLabel").text = CharacterManager.current_character.prompts[currentPrompt].answer1.answerText
 	answer2.get_node("MarginContainer/RichTextLabel").text = CharacterManager.current_character.prompts[currentPrompt].answer2.answerText
 	answer3.get_node("MarginContainer/RichTextLabel").text = CharacterManager.current_character.prompts[currentPrompt].answer3.answerText
-	show_options.rpc()
+	if ScoreManager.currentRound != 7:
+		show_options.rpc()
 
 func _on_answer_1_pressed():
 	prompt = CharacterManager.current_character.prompts[currentPrompt].answer1.answerText

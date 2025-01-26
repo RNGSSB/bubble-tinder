@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c2dxtjhjbdftu"]
+[gd_scene load_steps=23 format=3 uid="uid://c2dxtjhjbdftu"]
 
 [ext_resource type="Script" path="res://marioteachestyping.gd" id="1_f7p8w"]
 [ext_resource type="Theme" uid="uid://ilmfrrwb4kap" path="res://theme_UI.tres" id="2_ywyl7"]
@@ -67,6 +67,10 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hb4fi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h6w4c"]
+
 [sub_resource type="Theme" id="Theme_elotl"]
 LineEdit/colors/caret_color = Color(0, 0, 0, 1)
 LineEdit/colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
@@ -91,6 +95,13 @@ RichTextLabel/constants/line_separation = -9
 RichTextLabel/constants/text_highlight_h_padding = 18
 RichTextLabel/font_sizes/normal_font_size = 37
 RichTextLabel/fonts/normal_font = ExtResource("4_mjxir")
+TextEdit/colors/caret_color = Color(0, 0, 0, 1)
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/colors/selection_color = Color(0.823212, 0.823212, 0.823212, 1)
+TextEdit/font_sizes/font_size = 37
+TextEdit/fonts/font = ExtResource("4_mjxir")
+TextEdit/styles/focus = SubResource("StyleBoxEmpty_hb4fi")
+TextEdit/styles/normal = SubResource("StyleBoxEmpty_h6w4c")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r18xy"]
 texture = ExtResource("5_osslh")
@@ -181,7 +192,6 @@ offset_right = 485.0
 offset_bottom = 417.0
 
 [node name="Typing" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 2
 offset_top = 251.0
 offset_right = 663.0
@@ -227,6 +237,7 @@ theme = SubResource("Theme_elotl")
 bbcode_enabled = true
 text = "Pero algo tranqui eh?"
 fit_content = true
+scroll_following = true
 
 [node name="Line Edit" type="MarginContainer" parent="Typing"]
 layout_mode = 2
@@ -248,18 +259,21 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Line Edit" type="LineEdit" parent="Typing/Line Edit/MarginContainer"]
+[node name="Line Edit" type="TextEdit" parent="Typing/Line Edit/MarginContainer"]
 layout_mode = 2
 theme = SubResource("Theme_elotl")
-text = "Pero algo tranqui eh?"
+text = "Pero algo tranqui eh?Pero algo tranqui eh?Pero algo tranqui eh?Pero algo tranqui eh?"
 placeholder_text = "Escribe el mensaje aquí"
-expand_to_text_length = true
 context_menu_enabled = false
-clear_button_enabled = true
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+caret_blink = true
+text_direction = 1
 
 [node name="Options" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -359,8 +373,8 @@ fit_content = true
 [connection signal="pressed" from="Answer1" to="." method="_on_answer_1_pressed"]
 [connection signal="pressed" from="Answer2" to="." method="_on_answer_2_pressed"]
 [connection signal="pressed" from="Answer3" to="." method="_on_answer_3_pressed"]
+[connection signal="gutter_added" from="Typing/Line Edit/MarginContainer/Line Edit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="text_changed" from="Typing/Line Edit/MarginContainer/Line Edit" to="." method="_on_line_edit_text_changed"]
-[connection signal="text_submitted" from="Typing/Line Edit/MarginContainer/Line Edit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="Options/Option 1/Text Message" to="." method="_on_answer_1_pressed"]
 [connection signal="pressed" from="Options/Option 2/Text Message" to="." method="_on_answer_2_pressed"]
 [connection signal="pressed" from="Options/Option 3/Text Message" to="." method="_on_answer_3_pressed"]
