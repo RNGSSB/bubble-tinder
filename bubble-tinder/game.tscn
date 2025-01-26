@@ -151,6 +151,7 @@ script = ExtResource("4_qqtiy")
 positions = [-30.0, 30.0]
 
 [node name="Host" type="Button" parent="LOBBY"]
+layout_mode = 0
 offset_left = 287.0
 offset_top = 365.0
 offset_right = 692.0
@@ -160,6 +161,7 @@ text = "Host
 "
 
 [node name="Join" type="Button" parent="LOBBY"]
+layout_mode = 0
 offset_left = 287.0
 offset_top = 554.0
 offset_right = 692.0
@@ -184,6 +186,7 @@ script = ExtResource("6_wfmck")
 script = ExtResource("3_600sm")
 
 [node name="Typing" type="Node" parent="StateMachine"]
+unique_name_in_owner = true
 script = ExtResource("4_gq7kg")
 
 [node name="Typing Spawner" type="Node" parent="StateMachine/Typing"]

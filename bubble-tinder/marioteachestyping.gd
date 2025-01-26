@@ -2,7 +2,6 @@ extends Control
 
 @onready var playerText = $"Typing/Line Edit/MarginContainer/Line Edit"
 @onready var labelAwesome = $"Typing/Option 1/MarginContainer/RichTextLabel"
-@onready var currentCharacter = $Character
 @onready var answer1 = $"Options/Option 1"
 @onready var answer2 = $"Options/Option 2"
 @onready var answer3 = $"Options/Option 3"
@@ -22,6 +21,7 @@ func _enter_tree():
 func _ready():
 	set_process_input(true)
 	ScoreManager.on_player_score.connect(on_score_updated)
+	ScoreManager.on_request_jajas.connect(send_jaja_to_manager)
 	CharacterManager.on_prompt_generated.connect(changeCurrentPrompt)
 	#if name == str(1):
 	#	position = Vector2(-218,380)
@@ -30,7 +30,6 @@ func _ready():
 	
 	if is_multiplayer_authority():
 		playerText.editable = true
-		playerText.focus_mode = 3
 	else:
 		playerText.process_mode = Node.PROCESS_MODE_DISABLED
 		answer1.process_mode = Node.PROCESS_MODE_DISABLED
@@ -48,8 +47,6 @@ func _process(delta):
 			playerText.grab_focus()
 			answer_chosen.rpc()
 		isJaja = true
-		if ScoreManager.checkFinalRound == true:
-			print("Scoring final round....!")
 	if isJaja == true:
 		answer1.get_node("Text Message").disabled = true
 		answer2.get_node("Text Message").disabled = true
@@ -72,6 +69,8 @@ func _on_line_edit_text_submitted():
 func calculateFinalRound():
 	pass
 
+func send_jaja_to_manager():
+	ScoreManager.set_jaja_value.rpc(multiplayer.get_unique_id(), playerText.text)
 
 func calculateScore() -> int:
 	var charTrait1 = CharacterManager.current_character.postive1
