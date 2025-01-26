@@ -3,8 +3,8 @@ extends Node2D
 var peer = ENetMultiplayerPeer.new()
 @export var player_ID_scene: PackedScene
 
-var player_one = null
-var player_two = null
+@export var player_one = null
+@export var player_two = null
 
 var current_player_ID = 0
 
