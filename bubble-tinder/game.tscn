@@ -1,17 +1,29 @@
-[gd_scene load_steps=13 format=3 uid="uid://bhou1pko4hqjr"]
+[gd_scene load_steps=25 format=3 uid="uid://bhou1pko4hqjr"]
 
 [ext_resource type="Script" path="res://scripts/game_system.gd" id="1_b86r6"]
 [ext_resource type="Script" path="res://scripts/StateMachine.gd" id="2_7kcuf"]
+[ext_resource type="Texture2D" uid="uid://cw5rdeei8iugc" path="res://ui/intro screen/background.png" id="2_tl754"]
 [ext_resource type="Script" path="res://scripts/states/setup.gd" id="3_600sm"]
+[ext_resource type="Texture2D" uid="uid://11d6ndgvbm7i" path="res://ui/intro screen/charmfitelogo.png" id="3_gn0tx"]
+[ext_resource type="Texture2D" uid="uid://chd022lt52uo2" path="res://ui/intro screen/splotch_big.png" id="3_io7vf"]
 [ext_resource type="Script" path="res://scripts/states/typing.gd" id="4_gq7kg"]
+[ext_resource type="Script" path="res://frutiger_updown.gd" id="4_qqtiy"]
 [ext_resource type="PackedScene" uid="uid://bgfkkk2bdt01r" path="res://setup_UI.tscn" id="4_r0yjy"]
+[ext_resource type="Texture2D" uid="uid://2578byoor8g" path="res://ui/intro screen/frutiger_metro.png" id="4_vs2xu"]
 [ext_resource type="Script" path="res://multiplayer_manager.gd" id="6_drphp"]
+[ext_resource type="Texture2D" uid="uid://cbnfff4e3usfw" path="res://ui/intro screen/arch_white.png" id="6_nxtug"]
 [ext_resource type="Script" path="res://lobby.gd" id="6_wfmck"]
 [ext_resource type="Script" path="res://typing_spawner.gd" id="7_1sytp"]
+[ext_resource type="Texture2D" uid="uid://bpqiybdpafq6t" path="res://ui/intro screen/small_hearts.png" id="7_ijvga"]
 [ext_resource type="PackedScene" uid="uid://bo1cshuk8ubag" path="res://player_id.tscn" id="7_t2gfb"]
+[ext_resource type="Texture2D" uid="uid://cox5lgt1a5f41" path="res://ui/intro screen/new splotches.png" id="8_cdbwh"]
 [ext_resource type="PackedScene" uid="uid://c2dxtjhjbdftu" path="res://marioteachestyping.tscn" id="8_yemi3"]
 [ext_resource type="Script" path="res://scripts/states/results.gd" id="9_3aoap"]
+[ext_resource type="Texture2D" uid="uid://jpmu53jmb50g" path="res://ui/bg/frutiger_shape2.png" id="9_vl1y1"]
 [ext_resource type="Script" path="res://scripts/states/jaja.gd" id="10_1q6ln"]
+[ext_resource type="Texture2D" uid="uid://b627xxy4x0bry" path="res://ui/intro screen/big_arch.png" id="10_f0bnx"]
+[ext_resource type="Texture2D" uid="uid://d2xijrh21ju1a" path="res://ui/intro screen/creditos.png" id="12_uerr2"]
+[ext_resource type="Theme" uid="uid://ds4mk6rh0dvil" path="res://resource/characters/buttons.tres" id="13_e7w88"]
 
 [node name="GAME" type="Node2D" node_paths=PackedStringArray("stateLabel", "timerLabel", "roundLabel")]
 script = ExtResource("1_b86r6")
@@ -41,6 +53,120 @@ offset_left = 398.0
 offset_top = 116.0
 offset_right = 624.0
 offset_bottom = 156.0
+
+[node name="LOBBY" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="TextureRect" type="TextureRect" parent="LOBBY"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_tl754")
+
+[node name="TextureRect2" type="TextureRect" parent="LOBBY"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_io7vf")
+
+[node name="TextureRect3" type="TextureRect" parent="LOBBY"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 556.0
+offset_right = 1210.0
+offset_bottom = 1108.0
+texture = ExtResource("4_vs2xu")
+stretch_mode = 4
+script = ExtResource("4_qqtiy")
+positions = [-30.0, 30.0]
+
+[node name="TextureRect5" type="TextureRect" parent="LOBBY"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 1889.0
+offset_bottom = 1080.0
+texture = ExtResource("6_nxtug")
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="LOBBY"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 71.0
+offset_right = 937.0
+offset_bottom = 433.0
+texture = ExtResource("7_ijvga")
+stretch_mode = 4
+script = ExtResource("4_qqtiy")
+positions = [-30.0, 30.0]
+
+[node name="TextureRect7" type="TextureRect" parent="LOBBY"]
+layout_mode = 0
+offset_left = 299.0
+offset_right = 1557.0
+offset_bottom = 1080.0
+texture = ExtResource("8_cdbwh")
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="LOBBY"]
+layout_mode = 0
+offset_left = 1271.0
+offset_top = -148.0
+offset_right = 2789.0
+offset_bottom = 558.0
+texture = ExtResource("9_vl1y1")
+stretch_mode = 4
+script = ExtResource("4_qqtiy")
+positions = [-30.0, 30.0]
+
+[node name="big arch" type="TextureRect" parent="LOBBY"]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 275.0
+offset_right = 1921.0
+offset_bottom = 1080.0
+texture = ExtResource("10_f0bnx")
+
+[node name="logo" type="TextureRect" parent="LOBBY"]
+layout_mode = 0
+offset_left = 754.0
+offset_top = 159.0
+offset_right = 1966.0
+offset_bottom = 602.0
+texture = ExtResource("3_gn0tx")
+script = ExtResource("4_qqtiy")
+positions = [-30.0, 30.0]
+
+[node name="logo2" type="TextureRect" parent="LOBBY"]
+layout_mode = 0
+offset_left = 1125.0
+offset_top = 490.0
+offset_right = 2232.0
+offset_bottom = 895.0
+texture = ExtResource("12_uerr2")
+stretch_mode = 4
+script = ExtResource("4_qqtiy")
+positions = [-30.0, 30.0]
+
+[node name="Host" type="Button" parent="LOBBY"]
+offset_left = 287.0
+offset_top = 365.0
+offset_right = 692.0
+offset_bottom = 502.0
+theme = ExtResource("13_e7w88")
+text = "Host
+"
+
+[node name="Join" type="Button" parent="LOBBY"]
+offset_left = 287.0
+offset_top = 554.0
+offset_right = 692.0
+offset_bottom = 691.0
+theme = ExtResource("13_e7w88")
+text = "Join
+"
 
 [node name="PLAY_UI" parent="." instance=ExtResource("4_r0yjy")]
 visible = false
@@ -99,26 +225,11 @@ script = ExtResource("10_1q6ln")
 script = ExtResource("6_drphp")
 player_ID_scene = ExtResource("7_t2gfb")
 
-[node name="Host" type="Button" parent="Multiplayer Manager"]
-offset_left = 9.0
-offset_top = 6.0
-offset_right = 44.0
-offset_bottom = 28.0
-text = "Host
-"
-
-[node name="Join" type="Button" parent="Multiplayer Manager"]
-offset_left = 6.0
-offset_top = 45.0
-offset_right = 49.0
-offset_bottom = 68.0
-text = "Join"
-
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Multiplayer Manager"]
 _spawnable_scenes = PackedStringArray("res://player_id.tscn")
 spawn_path = NodePath("..")
 
+[connection signal="pressed" from="LOBBY/Host" to="Multiplayer Manager" method="_on_host_pressed"]
+[connection signal="pressed" from="LOBBY/Join" to="Multiplayer Manager" method="_on_join_pressed"]
 [connection signal="has_confirmed_both" from="PLAY_UI" to="StateMachine/Setup" method="_on_setup_has_confirmed_both"]
 [connection signal="Transitioned" from="StateMachine/Setup" to="PLAY_UI" method="_on_setup_transitioned"]
-[connection signal="pressed" from="Multiplayer Manager/Host" to="Multiplayer Manager" method="_on_host_pressed"]
-[connection signal="pressed" from="Multiplayer Manager/Join" to="Multiplayer Manager" method="_on_join_pressed"]

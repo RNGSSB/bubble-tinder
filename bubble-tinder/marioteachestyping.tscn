@@ -1,11 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://c2dxtjhjbdftu"]
+[gd_scene load_steps=18 format=3 uid="uid://c2dxtjhjbdftu"]
 
 [ext_resource type="Script" path="res://marioteachestyping.gd" id="1_f7p8w"]
 [ext_resource type="Theme" uid="uid://ilmfrrwb4kap" path="res://theme_UI.tres" id="2_ywyl7"]
 [ext_resource type="Texture2D" uid="uid://bvanbvs8nsvgt" path="res://ui/imgs/9_slice_button_3.png" id="3_ngqyo"]
 [ext_resource type="FontFile" uid="uid://osy3lswlqjww" path="res://ui/fonts/Coolvetica Rg.otf" id="4_mjxir"]
 [ext_resource type="Texture2D" uid="uid://cv8hvhf8g7wjf" path="res://ui/imgs/9_slice_button.png" id="5_osslh"]
-[ext_resource type="Texture2D" uid="uid://1mhiiseo0m5s" path="res://ui/imgs/9_slice_button_hover.png" id="6_3rirs"]
+[ext_resource type="Theme" uid="uid://ds4mk6rh0dvil" path="res://resource/characters/buttons.tres" id="6_o4lf5"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tto0q"]
 properties/0/path = NodePath("Typing/Line Edit/MarginContainer/Line Edit:text")
@@ -103,40 +103,6 @@ TextEdit/fonts/font = ExtResource("4_mjxir")
 TextEdit/styles/focus = SubResource("StyleBoxEmpty_hb4fi")
 TextEdit/styles/normal = SubResource("StyleBoxEmpty_h6w4c")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r18xy"]
-texture = ExtResource("5_osslh")
-texture_margin_left = 50.0
-texture_margin_top = 30.0
-texture_margin_right = 45.0
-texture_margin_bottom = 30.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uajpu"]
-texture = ExtResource("6_3rirs")
-texture_margin_left = 50.0
-texture_margin_top = 30.0
-texture_margin_right = 45.0
-texture_margin_bottom = 30.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kthyo"]
-texture = ExtResource("5_osslh")
-texture_margin_left = 50.0
-texture_margin_top = 30.0
-texture_margin_right = 45.0
-texture_margin_bottom = 30.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfb4b"]
-texture = ExtResource("6_3rirs")
-texture_margin_left = 50.0
-texture_margin_top = 30.0
-texture_margin_right = 45.0
-texture_margin_bottom = 30.0
-
-[sub_resource type="Theme" id="Theme_3ie45"]
-Button/styles/hover = SubResource("StyleBoxTexture_r18xy")
-Button/styles/hover_pressed = SubResource("StyleBoxTexture_uajpu")
-Button/styles/normal = SubResource("StyleBoxTexture_kthyo")
-Button/styles/pressed = SubResource("StyleBoxTexture_wfb4b")
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15it3"]
 
 [node name="InputStuff" type="Control"]
@@ -192,6 +158,7 @@ offset_right = 485.0
 offset_bottom = 417.0
 
 [node name="Typing" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 2
 offset_top = 251.0
 offset_right = 663.0
@@ -273,7 +240,6 @@ caret_blink = true
 text_direction = 1
 
 [node name="Options" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -301,7 +267,7 @@ theme = SubResource("Theme_me1rh")
 
 [node name="Text Message" type="Button" parent="Options/Option 1"]
 layout_mode = 2
-theme = SubResource("Theme_3ie45")
+theme = ExtResource("6_o4lf5")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_15it3")
 
 [node name="MarginContainer" type="MarginContainer" parent="Options/Option 1"]
@@ -326,7 +292,7 @@ theme = SubResource("Theme_me1rh")
 
 [node name="Text Message" type="Button" parent="Options/Option 2"]
 layout_mode = 2
-theme = SubResource("Theme_3ie45")
+theme = ExtResource("6_o4lf5")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_15it3")
 
 [node name="MarginContainer" type="MarginContainer" parent="Options/Option 2"]
@@ -351,7 +317,7 @@ theme = SubResource("Theme_me1rh")
 
 [node name="Text Message" type="Button" parent="Options/Option 3"]
 layout_mode = 2
-theme = SubResource("Theme_3ie45")
+theme = ExtResource("6_o4lf5")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_15it3")
 
 [node name="MarginContainer" type="MarginContainer" parent="Options/Option 3"]
