@@ -205,6 +205,9 @@ stretch_mode = 5
 [node name="Player 1 Button" type="Node" parent="Player 1/TextureButton"]
 script = ExtResource("6_1dlkx")
 onpress_rotation = 0.4
+player_has_confirmed = null
+player_number = null
+belongs_to_player = null
 
 [node name="Player 2" type="Control" parent="."]
 anchors_preset = 0
@@ -229,6 +232,9 @@ stretch_mode = 5
 [node name="Player 2 Button" type="Node" parent="Player 2/TextureButton2"]
 script = ExtResource("6_1dlkx")
 onpress_rotation = 0.4
+player_has_confirmed = null
+player_number = null
+belongs_to_player = null
 
 [node name="player 2" type="Panel" parent="Player 2"]
 layout_mode = 1

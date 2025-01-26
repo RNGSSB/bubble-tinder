@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://lobby.gd" id="6_wfmck"]
 [ext_resource type="Script" path="res://typing_spawner.gd" id="7_1sytp"]
 [ext_resource type="Texture2D" uid="uid://bpqiybdpafq6t" path="res://ui/intro screen/small_hearts.png" id="7_ijvga"]
-[ext_resource type="PackedScene" path="res://player_id.tscn" id="7_t2gfb"]
+[ext_resource type="PackedScene" uid="uid://bo1cshuk8ubag" path="res://player_id.tscn" id="7_t2gfb"]
 [ext_resource type="Texture2D" uid="uid://cox5lgt1a5f41" path="res://ui/intro screen/new splotches.png" id="8_cdbwh"]
 [ext_resource type="PackedScene" uid="uid://c2dxtjhjbdftu" path="res://marioteachestyping.tscn" id="8_yemi3"]
 [ext_resource type="Script" path="res://scripts/states/results.gd" id="9_3aoap"]
@@ -23,7 +23,7 @@
 [ext_resource type="Script" path="res://scripts/states/jaja.gd" id="10_1q6ln"]
 [ext_resource type="Texture2D" uid="uid://b627xxy4x0bry" path="res://ui/intro screen/big_arch.png" id="10_f0bnx"]
 [ext_resource type="Texture2D" uid="uid://d2xijrh21ju1a" path="res://ui/intro screen/creditos.png" id="12_uerr2"]
-[ext_resource type="Theme" uid="uid://bvfnn3meximla" path="res://resource/characters/buttons.tres" id="13_e7w88"]
+[ext_resource type="Theme" uid="uid://ds4mk6rh0dvil" path="res://resource/characters/buttons.tres" id="13_e7w88"]
 
 [node name="GAME" type="Node2D" node_paths=PackedStringArray("stateLabel", "timerLabel", "roundLabel")]
 script = ExtResource("1_b86r6")

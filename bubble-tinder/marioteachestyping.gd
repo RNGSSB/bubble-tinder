@@ -197,6 +197,7 @@ func _on_answer_3_pressed():
 
 @rpc("any_peer", "call_local", "reliable")
 func answer_chosen():
+	playerText.focus_mode = 2
 	optionsPanel.visible = false
 	typingPanel.visible = true
 
