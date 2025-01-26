@@ -14,13 +14,16 @@ func _ready() -> void:
 func _check_belongs_to_player(is_player_one):
 	if is_player_one:
 		if player_number == 1:
+			print("I am player one!")
 			pass
 		else:
+			
 			get_parent().mouse_filter = Control.MOUSE_FILTER_IGNORE
 	else:
 		if player_number == 1:
 			get_parent().mouse_filter = Control.MOUSE_FILTER_IGNORE
 		else:
+			print("I am player two!")
 			pass
 func _start_tween():
 	var t = create_tween().set_loops()
@@ -49,7 +52,6 @@ func player_ready():
 	t.tween_property(get_parent(), "rotation", onpress_rotation, 0.2).set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT).as_relative()
 	print("I've emitted the signal: " + get_parent().name)
 	player_has_confirmed = true
-	
 	player_confirm_signal.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

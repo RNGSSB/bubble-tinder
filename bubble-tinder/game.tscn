@@ -41,6 +41,7 @@ script = ExtResource("6_wfmck")
 script = ExtResource("3_600sm")
 
 [node name="SETUP" parent="StateMachine/Setup" instance=ExtResource("4_r0yjy")]
+visible = false
 
 [node name="Typing" type="Node" parent="StateMachine"]
 script = ExtResource("4_gq7kg")
