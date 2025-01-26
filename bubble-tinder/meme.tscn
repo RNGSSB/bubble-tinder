@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw88aaykml56o"]
+
+[ext_resource type="Texture2D" uid="uid://cv8hvhf8g7wjf" path="res://ui/imgs/9_slice_button.png" id="1_ipgsk"]
+[ext_resource type="Texture2D" uid="uid://cskyj1bxt1vr7" path="res://ui/meme/nyancatt.png" id="2_yehmk"]
+
+[sub_resource type="Theme" id="Theme_me1rh"]
+MarginContainer/constants/margin_bottom = 8
+MarginContainer/constants/margin_left = 8
+MarginContainer/constants/margin_right = 8
+MarginContainer/constants/margin_top = 8
+
+[node name="Meme" type="MarginContainer"]
+theme = SubResource("Theme_me1rh")
+
+[node name="Text Message" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_ipgsk")
+patch_margin_left = 25
+patch_margin_top = 30
+patch_margin_right = 25
+patch_margin_bottom = 20
+axis_stretch_horizontal = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_yehmk")
+expand_mode = 5

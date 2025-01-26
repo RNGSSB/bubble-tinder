@@ -12,8 +12,6 @@ var prompt = "Select an answer"
 var promptTrait = Traits.Traits.FLIRTY
 var isJaja = false
 
-
-
 func _enter_tree():
 	set_multiplayer_authority(name.to_int())
 
@@ -43,9 +41,12 @@ func _process(delta):
 	if ScoreManager.currentRound == 7:
 		if isJaja == false:
 			# Enter haha mode
-			answer_chosen.rpc()
-			playerText.focus_mode = 2
-			playerText.grab_focus()
+			ScoreManager.add_meme_to_chat()
+			if is_multiplayer_authority():
+				playerText.focus_mode = 2
+				playerText.grab_focus()
+				playerText.accept_event()
+				answer_chosen.rpc()
 		isJaja = true
 	if isJaja == true:
 		answer1.get_node("Text Message").disabled = true
@@ -70,7 +71,10 @@ func calculateFinalRound():
 	pass
 
 func send_jaja_to_manager():
-	ScoreManager.set_jaja_value.rpc(multiplayer.get_unique_id(), playerText.text)
+	if is_multiplayer_authority():
+		print("---------------------")
+		print("Requesting a haha: " + str(multiplayer.get_unique_id()))
+		ScoreManager.set_jaja_value.rpc(multiplayer.get_unique_id(), playerText.text)
 
 func calculateScore() -> int:
 	var charTrait1 = CharacterManager.current_character.postive1
@@ -140,6 +144,8 @@ func changeCurrentPrompt(prompt_number):
 
 @rpc("any_peer", "call_local", "reliable")
 func rpc_change_prompt(prompt_number):
+	if multiplayer.get_remote_sender_id() != 1:
+		return
 	prompt = "Select an answer"
 	playerText.focus_mode = 0
 	playerText.text = ""
@@ -148,6 +154,7 @@ func rpc_change_prompt(prompt_number):
 	answer1.get_node("MarginContainer/RichTextLabel").text = CharacterManager.current_character.prompts[currentPrompt].answer1.answerText
 	answer2.get_node("MarginContainer/RichTextLabel").text = CharacterManager.current_character.prompts[currentPrompt].answer2.answerText
 	answer3.get_node("MarginContainer/RichTextLabel").text = CharacterManager.current_character.prompts[currentPrompt].answer3.answerText
+	
 	if ScoreManager.currentRound != 7:
 		show_options.rpc()
 
@@ -157,6 +164,7 @@ func _on_answer_1_pressed():
 	promptTrait = CharacterManager.current_character.prompts[currentPrompt].answer1.answerTrait
 	playerText.focus_mode = 2
 	playerText.grab_focus()
+	playerText.accept_event()
 	answer_chosen.rpc()
 
 func _on_answer_2_pressed():
@@ -165,6 +173,7 @@ func _on_answer_2_pressed():
 	promptTrait = CharacterManager.current_character.prompts[currentPrompt].answer2.answerTrait
 	playerText.focus_mode = 2
 	playerText.grab_focus()
+	playerText.accept_event()
 	answer_chosen.rpc()
 
 func _on_answer_3_pressed():
@@ -173,6 +182,7 @@ func _on_answer_3_pressed():
 	promptTrait = CharacterManager.current_character.prompts[currentPrompt].answer3.answerTrait
 	playerText.focus_mode = 2
 	playerText.grab_focus()
+	playerText.accept_event()
 	answer_chosen.rpc()
 
 @rpc("any_peer", "call_local", "reliable")

@@ -1,7 +1,7 @@
 extends State
 var stupidCheck = false
 var timer = 0
-
+var hasNotified = false
 func Exit():
 	pass
 
@@ -20,6 +20,7 @@ func Physics_Update(delta: float):
 	
 	if ScoreManager.currentRound == 7 and owner.frameCounter == timer + 300:
 		ScoreManager.checkFinalRound = true
-		ScoreManager.request_jajas()
-		print("Check for final round end: " + str(ScoreManager.checkFinalRound))
+		if hasNotified == false:
+			ScoreManager.request_jajas()
+			hasNotified = true
 		Transitioned.emit(self, "results")

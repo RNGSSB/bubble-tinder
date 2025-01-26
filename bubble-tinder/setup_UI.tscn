@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bgfkkk2bdt01r"]
+[gd_scene load_steps=43 format=3 uid="uid://bgfkkk2bdt01r"]
 
 [ext_resource type="Script" path="res://setup_behavior.gd" id="1_hb5aq"]
 [ext_resource type="Texture2D" uid="uid://u7xychm3oum3" path="res://ui/mockups/match_image.png" id="2_enhdr"]
@@ -30,6 +30,10 @@
 [ext_resource type="Texture2D" uid="uid://dk23m8p01vba4" path="res://ui/bg/blue_whitelines2.png" id="12_s1pku"]
 [ext_resource type="Texture2D" uid="uid://b33lf70n1m1hm" path="res://art/player_two.png" id="13_mvfnw"]
 [ext_resource type="Texture2D" uid="uid://b6sq2nef4n75u" path="res://ui/bg/frutiger_shape3.png" id="13_p4or8"]
+[ext_resource type="Texture2D" uid="uid://cskyj1bxt1vr7" path="res://ui/meme/nyancatt.png" id="23_nyps7"]
+[ext_resource type="Texture2D" uid="uid://buqrnooax8uac" path="res://ui/meme/i_found_love_online.jpg" id="24_bife7"]
+[ext_resource type="PackedScene" uid="uid://bw88aaykml56o" path="res://meme.tscn" id="25_igden"]
+[ext_resource type="Texture2D" uid="uid://cfu6733hqiipa" path="res://ui/meme/cake_copy.jpg" id="25_jeypg"]
 [ext_resource type="Script" path="res://winning_manager.gd" id="31_2thyn"]
 [ext_resource type="Texture2D" uid="uid://hp6ykl6hbhwb" path="res://ui/match_win.png" id="32_vv7ff"]
 [ext_resource type="Texture2D" uid="uid://b6i353ax4a0gi" path="res://ui/match_popped.png" id="33_4vuaj"]
@@ -350,15 +354,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_xlceu")
 text_message = ExtResource("9_1w0vj")
+meme_message = ExtResource("25_igden")
 chatlog_container = NodePath("VBoxContainer")
+meme_list = Array[Texture2D]([ExtResource("23_nyps7"), ExtResource("24_bife7"), ExtResource("25_jeypg")])
 player_one_tex = ExtResource("10_jfk0v")
 player_two_tex = ExtResource("8_xqkqv")
 npc_tex = ExtResource("12_o8dev")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Center Column/Chatlog"]
-layout_mode = 0
-offset_right = 598.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -299.0
+offset_top = -1070.0
+offset_right = 299.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
 alignment = 2
 
 [node name="Setup Elements" type="Control" parent="."]

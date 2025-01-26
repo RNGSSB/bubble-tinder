@@ -1,13 +1,27 @@
 extends State
 
-
+var has_set_results = false
 func Exit():
 	pass
 
 func Enter():
 	owner.stateLabel.text = owner.CURRSTATE
 	print("Results!!!!")
-	
+
+func Update(_delta: float):
+	if has_set_results == false:
+		if ScoreManager.has_enough_for_results:
+			set_results_finally()
+			has_set_results = true
+	pass
+
+func Physics_Update(delta: float):
+	pass
+
+
+func set_results_finally():
+	print("-------------")
+	print("I HAVE ENOUGH FOR RESULTS, PLEASE SET APPROPRIATELY")
 	var win_manager = $"../../PLAY_UI".get_node("Winning Elements")
 	if ScoreManager.player1score > ScoreManager.player2score:
 		win_manager.set_win_images(1)
@@ -19,9 +33,3 @@ func Enter():
 		print("You both kind of suck...")
 	elif ScoreManager.player1score == ScoreManager.player2score:
 		print("You both kind of suck...")
-
-func Update(_delta: float):
-	pass
-
-func Physics_Update(delta: float):
-	pass
