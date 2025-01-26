@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpv1586pascc2"]
+[gd_scene load_steps=5 format=3 uid="uid://ca85mqvl1bn6i"]
 
 [ext_resource type="Script" path="res://scripts/game_system.gd" id="1_qhtde"]
 [ext_resource type="Script" path="res://scripts/StateMachine.gd" id="2_iurt1"]
 [ext_resource type="Script" path="res://scripts/states/setup.gd" id="3_cwtcs"]
 [ext_resource type="Script" path="res://scripts/states/typing.gd" id="4_kl8w2"]
 
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("stateLabel", "timerLabel")]
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("stateLabel", "timerLabel", "roundLabel")]
 script = ExtResource("1_qhtde")
 stateLabel = NodePath("State")
 timerLabel = NodePath("Timer")
+roundLabel = NodePath("Round")
 
 [node name="State" type="RichTextLabel" parent="."]
 offset_left = 412.0
@@ -33,3 +34,10 @@ script = ExtResource("3_cwtcs")
 
 [node name="Typing" type="Node" parent="StateMachine"]
 script = ExtResource("4_kl8w2")
+
+[node name="Round" type="RichTextLabel" parent="."]
+offset_left = 371.0
+offset_top = 126.0
+offset_right = 673.0
+offset_bottom = 166.0
+text = "Round 1"
