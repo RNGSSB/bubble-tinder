@@ -16,7 +16,7 @@ func _on_start_typing_callback() -> void:
 @rpc("call_local", "reliable", "any_peer")
 func _on_start_typing() -> void:
 	var typing = typing_scene.instantiate()
-	typing_scene.name = str(multiplayer.get_unique_id())
+	typing.name = str(multiplayer.get_unique_id())
 	var is_player_one = $"../../../Multiplayer Manager".is_player_one()
 	if is_player_one:
 		$"Player 1 Typing UI".add_child(typing)
