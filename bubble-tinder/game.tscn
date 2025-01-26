@@ -57,6 +57,7 @@ offset_right = 640.0
 offset_bottom = 1080.0
 size_flags_horizontal = 2
 size_flags_vertical = 6
+mouse_filter = 2
 
 [node name="Player 2 Typing UI2" type="Control" parent="StateMachine/Typing/Typing Spawner"]
 layout_mode = 3
@@ -72,6 +73,7 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 2
 size_flags_vertical = 6
+mouse_filter = 2
 
 [node name="Multiplayer Manager" type="Node2D" parent="."]
 script = ExtResource("6_drphp")
