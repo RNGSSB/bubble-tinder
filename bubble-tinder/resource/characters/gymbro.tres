@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Character" load_steps=16 format=3 uid="uid://cdq7bw6swgqp6"]
+[gd_resource type="Resource" script_class="Character" load_steps=17 format=3 uid="uid://cdq7bw6swgqp6"]
 
 [ext_resource type="Script" path="res://resource/prompt.gd" id="1_1f4o1"]
+[ext_resource type="Texture2D" uid="uid://8ia3bupl7eh3" path="res://ui/juanpi.png" id="1_yyf24"]
 [ext_resource type="Script" path="res://resource/character.gd" id="2_0phss"]
 [ext_resource type="Script" path="res://resource/answer.gd" id="2_pu8y0"]
 
@@ -75,6 +76,7 @@ script = ExtResource("2_0phss")
 name = "Juanpi"
 age = 28
 description = "Me la vivo en el gym. 100kg PR. Pero hablame bonito ok? E igual alternamos peso muerto ;)"
+profile_picture = ExtResource("1_yyf24")
 trait1 = 0
 trait2 = 2
 postive1 = 0

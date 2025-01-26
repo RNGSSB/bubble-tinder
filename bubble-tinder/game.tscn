@@ -20,6 +20,7 @@ timerLabel = NodePath("Timer")
 roundLabel = NodePath("Round")
 
 [node name="State" type="RichTextLabel" parent="."]
+visible = false
 offset_left = 412.0
 offset_top = 174.0
 offset_right = 808.0
@@ -27,6 +28,7 @@ offset_bottom = 214.0
 text = "Current State"
 
 [node name="Timer" type="RichTextLabel" parent="."]
+visible = false
 offset_left = 472.0
 offset_top = 260.0
 offset_right = 816.0
@@ -34,6 +36,7 @@ offset_bottom = 300.0
 text = "time"
 
 [node name="Round" type="RichTextLabel" parent="."]
+visible = false
 offset_left = 398.0
 offset_top = 116.0
 offset_right = 624.0

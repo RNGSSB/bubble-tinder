@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Character" load_steps=16 format=3 uid="uid://d3rylo21midn4"]
+[gd_resource type="Resource" script_class="Character" load_steps=17 format=3 uid="uid://d3rylo21midn4"]
 
 [ext_resource type="Script" path="res://resource/prompt.gd" id="1_5yat8"]
+[ext_resource type="Texture2D" uid="uid://urjoq45tfomp" path="res://ui/violeta.png" id="1_cv6sf"]
 [ext_resource type="Script" path="res://resource/character.gd" id="2_alpnb"]
 [ext_resource type="Script" path="res://resource/answer.gd" id="2_wesve"]
 
@@ -75,6 +76,7 @@ script = ExtResource("2_alpnb")
 name = "violetha*'"
 age = 28
 description = "L_L puro pxndx y asiii'. me gustan los inteligentes ._.' y que sean interesantes y cools."
+profile_picture = ExtResource("1_cv6sf")
 trait1 = 0
 trait2 = 2
 postive1 = 1

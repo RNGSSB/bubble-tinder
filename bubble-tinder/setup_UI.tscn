@@ -1,23 +1,43 @@
-[gd_scene load_steps=21 format=3 uid="uid://bgfkkk2bdt01r"]
+[gd_scene load_steps=36 format=3 uid="uid://bgfkkk2bdt01r"]
 
 [ext_resource type="Script" path="res://setup_behavior.gd" id="1_hb5aq"]
-[ext_resource type="Texture2D" uid="uid://3me3yn4dqued" path="res://ui/mockups/setup.png" id="1_j7w3q"]
 [ext_resource type="Texture2D" uid="uid://u7xychm3oum3" path="res://ui/mockups/match_image.png" id="2_enhdr"]
+[ext_resource type="Texture2D" uid="uid://dnrycx5b73buj" path="res://ui/bg/green_bg.png" id="2_xnet0"]
+[ext_resource type="Texture2D" uid="uid://jpmu53jmb50g" path="res://ui/bg/frutiger_shape2.png" id="3_4d55i"]
 [ext_resource type="Script" path="res://profile_manager.gd" id="3_110sb"]
 [ext_resource type="Theme" uid="uid://dj865biutyflw" path="res://match_description.tres" id="3_ysciy"]
+[ext_resource type="Script" path="res://frutiger_updown.gd" id="4_lvdtk"]
+[ext_resource type="Texture2D" uid="uid://5r84f2i2vn47" path="res://ui/bg/green_whitelines1.png" id="4_nedxf"]
 [ext_resource type="Theme" uid="uid://c0xwktvuwulf1" path="res://name_panel_theme_UI.tres" id="4_pbehu"]
+[ext_resource type="Texture2D" uid="uid://c7nu0qany0f28" path="res://ui/bg/green_splotches1.png" id="5_5flmv"]
 [ext_resource type="Theme" uid="uid://ilmfrrwb4kap" path="res://theme_UI.tres" id="5_bdfsv"]
 [ext_resource type="Texture2D" uid="uid://b30imwkp8if5x" path="res://ui/imgs/ok_button.png" id="6_jhxby"]
+[ext_resource type="Texture2D" uid="uid://4gapmj453rls" path="res://ui/bg/green_whitelines2.png" id="6_tc7c1"]
+[ext_resource type="Texture2D" uid="uid://d2wp78lvadtbc" path="res://ui/bg/frutiger_shape1.png" id="7_6xatr"]
 [ext_resource type="Texture2D" uid="uid://ddnod1km4ksyk" path="res://ui/imgs/ok_button_pressed.png" id="7_la3f5"]
+[ext_resource type="Texture2D" uid="uid://be0ghdombps5a" path="res://ui/bg/blue_bg.png" id="8_4kuwp"]
 [ext_resource type="Texture2D" uid="uid://cy2gydmd4mo8o" path="res://ui/imgs/ok_button_hover.png" id="8_mvalt"]
 [ext_resource type="Script" path="res://chatlog_manager.gd" id="8_xlceu"]
 [ext_resource type="Texture2D" uid="uid://cv8hvhf8g7wjf" path="res://ui/imgs/9_slice_button.png" id="8_xqkqv"]
 [ext_resource type="PackedScene" uid="uid://dac47h4120ijf" path="res://text_message.tscn" id="9_1w0vj"]
 [ext_resource type="Script" path="res://ok_button_anim.gd" id="9_30u41"]
+[ext_resource type="Texture2D" uid="uid://btodsxvs1qkfs" path="res://ui/bg/blue_splotches.png" id="9_clmjx"]
+[ext_resource type="Texture2D" uid="uid://d21ttivi3fetb" path="res://ui/bg/frutiger_shape4.png" id="10_6twhy"]
 [ext_resource type="Texture2D" uid="uid://b3oh6tq5ll1je" path="res://ui/imgs/9_slice_button_2.png" id="10_jfk0v"]
+[ext_resource type="Texture2D" uid="uid://bo4rb5pddgx6r" path="res://ui/bg/blue_whitelines1.png" id="11_mlna0"]
 [ext_resource type="Texture2D" uid="uid://bvanbvs8nsvgt" path="res://ui/imgs/9_slice_button_3.png" id="12_o8dev"]
 [ext_resource type="Texture2D" uid="uid://cupk585ougbvt" path="res://art/player_one.png" id="12_qrt3m"]
+[ext_resource type="Texture2D" uid="uid://dk23m8p01vba4" path="res://ui/bg/blue_whitelines2.png" id="12_s1pku"]
 [ext_resource type="Texture2D" uid="uid://b33lf70n1m1hm" path="res://art/player_two.png" id="13_mvfnw"]
+[ext_resource type="Texture2D" uid="uid://b6sq2nef4n75u" path="res://ui/bg/frutiger_shape3.png" id="13_p4or8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4iepd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1a6q"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kka0b"]
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_245el"]
 
@@ -41,12 +61,125 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hb5aq")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.156863)
-layout_mode = 0
+[node name="Container" type="Control" parent="."]
+anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_j7w3q")
+
+[node name="Green Side" type="TextureRect" parent="Container"]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_xnet0")
+
+[node name="White Shape3" type="TextureRect" parent="Container/Green Side"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1258.0
+offset_bottom = 1081.0
+texture = ExtResource("5_5flmv")
+stretch_mode = 2
+
+[node name="Frutiger Shape" type="TextureRect" parent="Container/Green Side"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = -33.0
+offset_right = 720.0
+offset_bottom = 438.0
+texture = ExtResource("3_4d55i")
+stretch_mode = 2
+script = ExtResource("4_lvdtk")
+positions = [15.0, -15.0]
+
+[node name="White Shape" type="TextureRect" parent="Container/Green Side"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 674.0
+offset_bottom = 1080.0
+texture = ExtResource("4_nedxf")
+stretch_mode = 2
+
+[node name="White Shape2" type="TextureRect" parent="Container/Green Side"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 626.0
+offset_right = 901.0
+offset_bottom = 1706.0
+texture = ExtResource("6_tc7c1")
+stretch_mode = 2
+
+[node name="Frutiger Shape2" type="TextureRect" parent="Container/Green Side"]
+layout_mode = 0
+offset_left = -53.0
+offset_top = 755.0
+offset_right = 452.0
+offset_bottom = 1226.0
+texture = ExtResource("7_6xatr")
+stretch_mode = 2
+script = ExtResource("4_lvdtk")
+positions = [-20.0, 20.0]
+
+[node name="Blue Side" type="TextureRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -674.0
+offset_top = -540.0
+offset_bottom = 540.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("8_4kuwp")
+
+[node name="White Shape3" type="TextureRect" parent="Container/Blue Side"]
+layout_mode = 0
+offset_left = -149.0
+offset_right = 680.0
+offset_bottom = 1080.0
+texture = ExtResource("9_clmjx")
+stretch_mode = 2
+
+[node name="Frutiger Shape" type="TextureRect" parent="Container/Blue Side"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 9.0
+offset_right = 774.0
+offset_bottom = 480.0
+texture = ExtResource("10_6twhy")
+stretch_mode = 2
+script = ExtResource("4_lvdtk")
+positions = [10.0, -10.0]
+
+[node name="White Shape" type="TextureRect" parent="Container/Blue Side"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 674.0
+offset_bottom = 1080.0
+texture = ExtResource("11_mlna0")
+stretch_mode = 2
+
+[node name="White Shape2" type="TextureRect" parent="Container/Blue Side"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 548.0
+offset_right = 1307.0
+offset_bottom = 1628.0
+texture = ExtResource("12_s1pku")
+stretch_mode = 2
+
+[node name="Frutiger Shape2" type="TextureRect" parent="Container/Blue Side"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 787.0
+offset_right = 511.0
+offset_bottom = 1258.0
+texture = ExtResource("13_p4or8")
+stretch_mode = 2
+script = ExtResource("4_lvdtk")
+positions = [-15.0, 15.0]
 
 [node name="Center Column" type="Control" parent="."]
 layout_mode = 1
@@ -55,27 +188,40 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -319.0
+offset_left = -299.0
 offset_top = -540.0
-offset_right = 319.0
+offset_right = 299.0
 offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel2" type="Panel" parent="Center Column"]
+[node name="Center Column Bg" type="Panel" parent="Center Column"]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4iepd")
 
 [node name="Profile Manager" type="Control" parent="Center Column"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_110sb")
+
+[node name="Panel" type="Panel" parent="Center Column/Profile Manager"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55
+anchor_top = 1.375
+anchor_right = 14.475
+anchor_bottom = 19.85
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j1a6q")
+metadata/_edit_use_anchors_ = true
 
 [node name="Match Picture Contain" type="Control" parent="Center Column/Profile Manager"]
 layout_mode = 1
@@ -84,10 +230,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 29.0
-offset_top = 75.0
-offset_right = 569.0
-offset_bottom = 767.0
+offset_left = 9.0
+offset_top = 59.0
+offset_right = 549.0
+offset_bottom = 751.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -123,15 +269,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 29.0
-offset_top = 734.0
-offset_right = 569.0
-offset_bottom = 946.0
+offset_left = 10.0
+offset_top = 729.0
+offset_right = 550.0
+offset_bottom = 941.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Descripcion" type="PanelContainer" parent="Center Column/Profile Manager/Text and Emojis"]
-self_modulate = Color(0.320857, 0.350516, 9.62615e-08, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -146,10 +291,12 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.54
+theme_override_styles/panel = SubResource("StyleBoxFlat_kka0b")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Center Column/Profile Manager/Text and Emojis/Descripcion"]
 layout_mode = 2
 theme = ExtResource("3_ysciy")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Pero hablame bonito eh. Me la vivo en el gym, hacemos peso muerto de dos?"
 
 [node name="Name Box" type="Panel" parent="Center Column/Profile Manager/Text and Emojis"]
@@ -186,9 +333,18 @@ fit_content = true
 replication_config = SubResource("SceneReplicationConfig_245el")
 
 [node name="Chatlog" type="Control" parent="Center Column" node_paths=PackedStringArray("chatlog_container")]
-anchors_preset = 0
-offset_right = 638.0
-offset_bottom = 1073.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.0
+offset_top = -536.5
+offset_right = 299.0
+offset_bottom = 536.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("8_xlceu")
 text_message = ExtResource("9_1w0vj")
 chatlog_container = NodePath("VBoxContainer")
@@ -198,12 +354,9 @@ npc_tex = ExtResource("12_o8dev")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Center Column/Chatlog"]
 layout_mode = 0
-offset_right = 636.0
+offset_right = 598.0
 offset_bottom = 1080.0
 alignment = 2
-
-[node name="Text Message" parent="Center Column/Chatlog/VBoxContainer" instance=ExtResource("9_1w0vj")]
-layout_mode = 2
 
 [node name="Setup Elements" type="Control" parent="."]
 anchors_preset = 0
@@ -248,9 +401,9 @@ fit_content = true
 [node name="TextureButton" type="TextureButton" parent="Setup Elements/Player 1"]
 layout_mode = 0
 offset_left = 227.0
-offset_top = 353.0
+offset_top = 315.611
 offset_right = 474.0
-offset_bottom = 613.0
+offset_bottom = 575.611
 rotation = -0.352507
 pivot_offset = Vector2(123, 130)
 keep_pressed_outside = true
@@ -272,9 +425,9 @@ offset_bottom = 40.0
 [node name="TextureButton2" type="TextureButton" parent="Setup Elements/Player 2"]
 layout_mode = 0
 offset_left = 1500.0
-offset_top = 336.0
+offset_top = 298.611
 offset_right = 1747.0
-offset_bottom = 596.0
+offset_bottom = 558.611
 rotation = 0.490438
 pivot_offset = Vector2(123, 130)
 keep_pressed_outside = true

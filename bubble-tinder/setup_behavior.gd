@@ -11,7 +11,8 @@ func _on_player_confirm():
 		print("HAS CONFIRMED")
 		has_confirmed_both.emit()
 		$"Setup Elements".visible = false
-
+		var modulate_t = create_tween()
+		modulate_t.tween_property($"Center Column/Profile Manager", "modulate", Color.hex(0x353536), 0.8).set_trans(Tween.TRANS_QUAD)
 func on_setup_start():
 	# Generate a character, and fill out the information accordingly.
 	if multiplayer.is_server():
