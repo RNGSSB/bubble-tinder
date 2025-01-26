@@ -49,6 +49,7 @@ func player_ready():
 	t.tween_property(get_parent(), "rotation", onpress_rotation, 0.2).set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT).as_relative()
 	print("I've emitted the signal: " + get_parent().name)
 	player_has_confirmed = true
+	
 	player_confirm_signal.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

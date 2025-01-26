@@ -6,7 +6,8 @@ func Exit():
 
 func Enter():
 	owner.stateLabel.text = owner.CURRSTATE
-	print("damn")
+	print("damn im in typing")
+	$"Typing Spawner"._on_start_typing_callback()
 
 func Update(_delta: float):
 	pass

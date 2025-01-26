@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cahya0186gp0l"]
+[gd_scene load_steps=11 format=3 uid="uid://cahya0186gp0l"]
 
 [ext_resource type="Script" path="res://scripts/game_system.gd" id="1_b86r6"]
 [ext_resource type="Script" path="res://scripts/StateMachine.gd" id="2_7kcuf"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bgfkkk2bdt01r" path="res://setup_UI.tscn" id="4_r0yjy"]
 [ext_resource type="Script" path="res://multiplayer_manager.gd" id="6_drphp"]
 [ext_resource type="Script" path="res://lobby.gd" id="6_wfmck"]
+[ext_resource type="Script" path="res://typing_spawner.gd" id="7_1sytp"]
 [ext_resource type="PackedScene" uid="uid://bo1cshuk8ubag" path="res://player_id.tscn" id="7_t2gfb"]
+[ext_resource type="PackedScene" uid="uid://c2dxtjhjbdftu" path="res://marioteachestyping.tscn" id="8_yemi3"]
 
 [node name="GAME" type="Node2D" node_paths=PackedStringArray("stateLabel", "timerLabel")]
 script = ExtResource("1_b86r6")
@@ -39,10 +41,36 @@ script = ExtResource("6_wfmck")
 script = ExtResource("3_600sm")
 
 [node name="SETUP" parent="StateMachine/Setup" instance=ExtResource("4_r0yjy")]
-visible = false
 
 [node name="Typing" type="Node" parent="StateMachine"]
 script = ExtResource("4_gq7kg")
+
+[node name="Typing Spawner" type="Node" parent="StateMachine/Typing"]
+script = ExtResource("7_1sytp")
+typing_scene = ExtResource("8_yemi3")
+
+[node name="Player 1 Typing UI" type="Control" parent="StateMachine/Typing/Typing Spawner"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 1080.0
+size_flags_horizontal = 2
+size_flags_vertical = 6
+
+[node name="Player 2 Typing UI2" type="Control" parent="StateMachine/Typing/Typing Spawner"]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -540.0
+offset_bottom = 540.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 6
 
 [node name="Multiplayer Manager" type="Node2D" parent="."]
 script = ExtResource("6_drphp")
