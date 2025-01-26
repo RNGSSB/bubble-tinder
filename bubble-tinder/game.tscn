@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhou1pko4hqjr"]
+[gd_scene load_steps=13 format=3 uid="uid://bhou1pko4hqjr"]
 
 [ext_resource type="Script" path="res://scripts/game_system.gd" id="1_b86r6"]
 [ext_resource type="Script" path="res://scripts/StateMachine.gd" id="2_7kcuf"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" path="res://player_id.tscn" id="7_t2gfb"]
 [ext_resource type="PackedScene" uid="uid://c2dxtjhjbdftu" path="res://marioteachestyping.tscn" id="8_yemi3"]
 [ext_resource type="Script" path="res://scripts/states/results.gd" id="9_3aoap"]
+[ext_resource type="Script" path="res://scripts/states/jaja.gd" id="10_1q6ln"]
 
 [node name="GAME" type="Node2D" node_paths=PackedStringArray("stateLabel", "timerLabel", "roundLabel")]
 script = ExtResource("1_b86r6")
@@ -87,6 +88,9 @@ mouse_filter = 2
 
 [node name="Results" type="Node" parent="StateMachine"]
 script = ExtResource("9_3aoap")
+
+[node name="Jaja" type="Node" parent="StateMachine"]
+script = ExtResource("10_1q6ln")
 
 [node name="Multiplayer Manager" type="Node2D" parent="."]
 script = ExtResource("6_drphp")

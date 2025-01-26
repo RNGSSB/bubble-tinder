@@ -10,6 +10,7 @@ extends Node2D
 @export var currentPrompt = 0
 var prompt = "Select an answer"
 var promptTrait = Traits.Traits.FLIRTY
+var isJaja = false
 
 
 
@@ -35,14 +36,20 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if ScoreManager.currentRound == 7:
+		isJaja = true
+	if isJaja == true:
+		answer1.disabled = true
+		answer2.disabled = true
+		answer3.disabled = true
 
 func _on_line_edit_text_submitted(new_text):
-	if(new_text == prompt):
-		print("YES!")
-		ScoreManager.add_player_score(name.to_int(), calculateScore())
-	else:
-		print("NO!")
+	if isJaja == false:
+		if(new_text == prompt):
+			print("YES!")
+			ScoreManager.add_player_score(name.to_int(), calculateScore())
+		else:
+			print("NO!")
 
 func calculateScore() -> int:
 	var charTrait1 = CharacterManager.current_character.postive1
