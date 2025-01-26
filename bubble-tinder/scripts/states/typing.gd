@@ -12,4 +12,5 @@ func Update(_delta: float):
 	pass
 
 func Physics_Update(delta: float):
-	pass
+	if ScoreManager.currentRound == 7:
+		Transitioned.emit(self, "results")

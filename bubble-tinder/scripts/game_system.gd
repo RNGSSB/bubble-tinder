@@ -3,6 +3,7 @@ extends Node2D
 @onready var stateMachine = $StateMachine
 @export var stateLabel : RichTextLabel
 @export var timerLabel : RichTextLabel
+@export var roundLabel : RichTextLabel
 
 @export var PREVSTATE = "Lobby"
 @export var CURRSTATE = "Lobby"
@@ -23,3 +24,4 @@ func _process(delta):
 func _physics_process(delta):
 	frameCounter += 1
 	timerLabel.text = str(frameCounter)
+	roundLabel.text = "Round: " + str(ScoreManager.currentRound)

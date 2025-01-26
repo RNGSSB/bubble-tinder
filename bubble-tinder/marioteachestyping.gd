@@ -9,6 +9,7 @@ extends Node2D
 @onready var displayPrompt = $displayPrompt
 @export var currentPrompt = 0
 var prompt = "Select an answer"
+var promptTrait = Traits.Traits.FLIRTY
 
 
 
@@ -39,9 +40,24 @@ func _process(delta):
 func _on_line_edit_text_submitted(new_text):
 	if(new_text == prompt):
 		print("YES!")
-		ScoreManager.add_player_score(name.to_int(), 1)
+		ScoreManager.add_player_score(name.to_int(), calculateScore())
 	else:
 		print("NO!")
+
+func calculateScore() -> int:
+	var charTrait1 = CharacterManager.current_character.postive1
+	var charTrait2 = CharacterManager.current_character.postive2
+	var charTrait3 = CharacterManager.current_character.negative1
+	var charTrait4 = CharacterManager.current_character.negative2
+	if charTrait1 == promptTrait or charTrait2 == promptTrait:
+		print("Rizz")
+		return 2
+	elif charTrait3 == promptTrait or charTrait4 == promptTrait:
+		print("Someone fucked up")
+		return -2
+	else:
+		print("The smash 4 of flirting.")
+		return 1
 
 func on_score_updated():
 	# Called whenever a player scores
@@ -108,14 +124,17 @@ func rpc_change_prompt(prompt_number):
 func _on_answer_1_pressed():
 	prompt = CharacterManager.current_character.prompts[currentPrompt].answer1.answerText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
+	promptTrait = CharacterManager.current_character.prompts[currentPrompt].answer1.answerTrait
 	playerText.focus_mode = 2
 
 func _on_answer_2_pressed():
 	prompt = CharacterManager.current_character.prompts[currentPrompt].answer2.answerText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
+	promptTrait = CharacterManager.current_character.prompts[currentPrompt].answer2.answerTrait
 	playerText.focus_mode = 2
 
 func _on_answer_3_pressed():
 	prompt = CharacterManager.current_character.prompts[currentPrompt].answer3.answerText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
+	promptTrait = CharacterManager.current_character.prompts[currentPrompt].answer3.answerTrait
 	playerText.focus_mode = 2

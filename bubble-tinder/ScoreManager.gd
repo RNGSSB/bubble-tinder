@@ -3,10 +3,12 @@ extends Node2D
 var player1score = 0
 var player2score = 0
 
+var currentRound = 1
+
 signal on_player_score
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	currentRound = 1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,14 +31,17 @@ func rpc_add_player_score(id, amt):
 		player2score += amt
 		print("Player 2 has scored!" + str(multiplayer.get_remote_sender_id()))
 		print("RECEIVING: " + str(multiplayer.get_unique_id()))
-	rpc_synchronize_score.rpc(player1score, player2score)
+	currentRound += 1
+	rpc_synchronize_score.rpc(player1score, player2score, currentRound)
 	print("p1: " + str(player1score))
 	print("p2: " + str(player2score))
+	print("current round: " + str(currentRound))
 	CharacterManager.generate_new_prompt()
 	on_player_score.emit()
 	
 @rpc("authority", "call_remote", "unreliable_ordered")
-func rpc_synchronize_score(playerone, playertwo):
+func rpc_synchronize_score(playerone, playertwo, round):
 	print("SYNCHRONIZING SCORE, RECEIVING: " + str(multiplayer.get_unique_id()))
 	player1score = playerone
 	player2score = playertwo
+	currentRound = round
