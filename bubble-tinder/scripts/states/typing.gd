@@ -1,6 +1,5 @@
 extends State
 
-
 func Exit():
 	pass
 
