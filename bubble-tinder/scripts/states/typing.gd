@@ -21,4 +21,6 @@ func Physics_Update(delta: float):
 		stupidCheck = true
 	
 	if ScoreManager.currentRound == 7 and owner.frameCounter == timer + 300:
+		ScoreManager.checkFinalRound = true
+		print("Check for final round end: " + str(ScoreManager.checkFinalRound))
 		Transitioned.emit(self, "results")

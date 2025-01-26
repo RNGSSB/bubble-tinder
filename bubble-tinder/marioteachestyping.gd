@@ -41,12 +41,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if ScoreManager.currentRound == 7:
+		if isJaja == false:
+			answer_chosen.rpc()
 		isJaja = true
+		if ScoreManager.checkFinalRound == true:
+			print("Scoring final round....!")
 	if isJaja == true:
 		answer1.get_node("Text Message").disabled = true
 		answer2.get_node("Text Message").disabled = true
 		answer3.get_node("Text Message").disabled = true
-		playerText.focus_mode = 2
 
 func _on_line_edit_text_submitted(new_text):
 	if isJaja == false:
@@ -56,6 +59,10 @@ func _on_line_edit_text_submitted(new_text):
 			ScoreManager.add_player_score(name.to_int(), calculateScore())
 		else:
 			print("NO!")
+
+func calculateFinalRound():
+	pass
+
 
 func calculateScore() -> int:
 	var charTrait1 = CharacterManager.current_character.postive1
@@ -153,14 +160,14 @@ func _on_answer_3_pressed():
 	prompt = CharacterManager.current_character.prompts[currentPrompt].answer3.answerText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
 	promptTrait = CharacterManager.current_character.prompts[currentPrompt].answer3.answerTrait
-	playerText.focus_mode = 2
-	playerText.grab_focus()
 	answer_chosen.rpc()
 
 @rpc("any_peer", "call_local", "reliable")
 func answer_chosen():
 	optionsPanel.visible = false
 	typingPanel.visible = true
+	playerText.focus_mode = 2
+	playerText.grab_focus()
 
 @rpc("any_peer", "call_local", "reliable")
 func show_options():

@@ -5,6 +5,8 @@ var player2score = 0
 
 var currentRound = 1
 
+var checkFinalRound = false
+
 signal on_player_score
 signal on_add_message_chat(id, str)
 # Called when the node enters the scene tree for the first time.
