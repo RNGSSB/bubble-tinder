@@ -42,6 +42,7 @@ func _process(delta):
 		answer1.disabled = true
 		answer2.disabled = true
 		answer3.disabled = true
+		playerText.focus_mode = 2
 
 func _on_line_edit_text_submitted(new_text):
 	if isJaja == false:
