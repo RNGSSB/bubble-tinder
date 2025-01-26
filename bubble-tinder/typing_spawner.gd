@@ -11,9 +11,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _on_start_typing_callback() -> void:
-	_on_start_typing.rpc()
+	_on_start_typing()
 	
-@rpc("call_local", "reliable", "any_peer")
 func _on_start_typing() -> void:
 	var typing_one = typing_scene.instantiate()
 	typing_one.name = str($"../../../Multiplayer Manager".player_one.ID)
