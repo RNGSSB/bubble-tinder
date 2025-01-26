@@ -7,6 +7,7 @@ signal has_confirmed_both
 
 func _on_player_confirm():
 	if player1_button.player_has_confirmed and player2_button.player_has_confirmed:
+		print("HAS CONFIRMED")
 		has_confirmed_both.emit()
 
 func check_authority():
