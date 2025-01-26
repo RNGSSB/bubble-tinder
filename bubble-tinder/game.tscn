@@ -33,6 +33,7 @@ script = ExtResource("2_7kcuf")
 initial_state = NodePath("Lobby")
 
 [node name="SETUP" parent="StateMachine" instance=ExtResource("4_r0yjy")]
+visible = false
 
 [node name="Lobby" type="Node" parent="StateMachine"]
 script = ExtResource("6_wfmck")

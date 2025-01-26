@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2dxtjhjbdftu"]
 
 [ext_resource type="Script" path="res://marioteachestyping.gd" id="1_f7p8w"]
-[ext_resource type="PackedScene" path="res://idk.tscn" id="2_7gto3"]
+[ext_resource type="PackedScene" uid="uid://bsa7m03oft36p" path="res://idk.tscn" id="2_7gto3"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tto0q"]
 properties/0/path = NodePath("LineEdit:text")
