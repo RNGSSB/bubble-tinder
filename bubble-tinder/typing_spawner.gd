@@ -5,6 +5,8 @@ extends Node
 @onready var player_one_typing_area = $"Player 1 Typing UI"
 @onready var player_two_typing_area = $"Player 2 Typing UI2"
 
+# Generate the current prompt, and save it in a variable accessible to this script.
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +14,7 @@ func _ready() -> void:
 
 func _on_start_typing_callback() -> void:
 	_on_start_typing()
-	
+
 func _on_start_typing() -> void:
 	var typing_one = typing_scene.instantiate()
 	typing_one.name = str(1)

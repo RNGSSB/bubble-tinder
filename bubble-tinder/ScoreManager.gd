@@ -3,6 +3,7 @@ extends Node2D
 var player1score = 0
 var player2score = 0
 
+signal on_player_score
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -31,6 +32,8 @@ func rpc_add_player_score(id, amt):
 	rpc_synchronize_score.rpc(player1score, player2score)
 	print("p1: " + str(player1score))
 	print("p2: " + str(player2score))
+	CharacterManager.generate_new_prompt()
+	on_player_score.emit()
 	
 @rpc("authority", "call_remote", "unreliable_ordered")
 func rpc_synchronize_score(playerone, playertwo):

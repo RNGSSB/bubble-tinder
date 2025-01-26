@@ -1,7 +1,74 @@
-[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://d3rylo21midn4"]
+[gd_resource type="Resource" script_class="Character" load_steps=16 format=3 uid="uid://d3rylo21midn4"]
 
 [ext_resource type="Script" path="res://resource/prompt.gd" id="1_5yat8"]
 [ext_resource type="Script" path="res://resource/character.gd" id="2_alpnb"]
+[ext_resource type="Script" path="res://resource/answer.gd" id="2_wesve"]
+
+[sub_resource type="Resource" id="Resource_y2i68"]
+script = ExtResource("2_wesve")
+answerText = "Hiiiiiii :3"
+answerTrait = 0
+
+[sub_resource type="Resource" id="Resource_xkqvf"]
+script = ExtResource("2_wesve")
+answerText = "Hi."
+answerTrait = 1
+
+[sub_resource type="Resource" id="Resource_ulgns"]
+script = ExtResource("2_wesve")
+answerText = "Hi (why didnt you text me)"
+answerTrait = 2
+
+[sub_resource type="Resource" id="Resource_w0ymg"]
+script = ExtResource("1_5yat8")
+promptText = "Omg hi"
+answer1 = SubResource("Resource_y2i68")
+answer2 = SubResource("Resource_xkqvf")
+answer3 = SubResource("Resource_ulgns")
+
+[sub_resource type="Resource" id="Resource_fqm7u"]
+script = ExtResource("2_wesve")
+answerText = "I love sonic yay"
+answerTrait = 0
+
+[sub_resource type="Resource" id="Resource_c4fco"]
+script = ExtResource("2_wesve")
+answerText = "Hello"
+answerTrait = 1
+
+[sub_resource type="Resource" id="Resource_ncrps"]
+script = ExtResource("2_wesve")
+answerText = "Skibidi toilet"
+answerTrait = 2
+
+[sub_resource type="Resource" id="Resource_gg0e8"]
+script = ExtResource("1_5yat8")
+promptText = "Ummm hi hello"
+answer1 = SubResource("Resource_fqm7u")
+answer2 = SubResource("Resource_c4fco")
+answer3 = SubResource("Resource_ncrps")
+
+[sub_resource type="Resource" id="Resource_fdqa0"]
+script = ExtResource("2_wesve")
+answerText = "Skibidi"
+answerTrait = 0
+
+[sub_resource type="Resource" id="Resource_epc4s"]
+script = ExtResource("2_wesve")
+answerText = "Yahooooo"
+answerTrait = 2
+
+[sub_resource type="Resource" id="Resource_ao7oc"]
+script = ExtResource("2_wesve")
+answerText = "Epicness incorporated"
+answerTrait = 3
+
+[sub_resource type="Resource" id="Resource_j4lis"]
+script = ExtResource("1_5yat8")
+promptText = "Whats vibes yay"
+answer1 = SubResource("Resource_fdqa0")
+answer2 = SubResource("Resource_epc4s")
+answer3 = SubResource("Resource_ao7oc")
 
 [resource]
 script = ExtResource("2_alpnb")
@@ -14,4 +81,4 @@ postive1 = 1
 postive2 = 2
 negative1 = 3
 negative2 = 0
-prompts = Array[ExtResource("1_5yat8")]([])
+prompts = Array[ExtResource("1_5yat8")]([SubResource("Resource_w0ymg"), SubResource("Resource_gg0e8"), SubResource("Resource_j4lis")])

@@ -17,12 +17,8 @@ func _enter_tree():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	displayPrompt.text = currentCharacter.def.prompts[currentPrompt].promptText
-	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
-	answer1.text = currentCharacter.def.prompts[currentPrompt].answer1.answerText
-	answer2.text = currentCharacter.def.prompts[currentPrompt].answer2.answerText
-	answer3.text = currentCharacter.def.prompts[currentPrompt].answer3.answerText
-	playerText.focus_mode = 0
+	ScoreManager.on_player_score.connect(on_score_updated)
+	CharacterManager.on_prompt_generated.connect(changeCurrentPrompt)
 	#if name == str(1):
 	#	position = Vector2(-218,380)
 	#else:
@@ -44,9 +40,13 @@ func _on_line_edit_text_submitted(new_text):
 	if(new_text == prompt):
 		print("YES!")
 		ScoreManager.add_player_score(name.to_int(), 1)
-		changeCurrentPrompt()
 	else:
 		print("NO!")
+
+func on_score_updated():
+	# Called whenever a player scores
+	playerText.text = ""
+	# Generate a new prompt
 
 func _on_line_edit_text_changed(new_text):
 	
@@ -90,32 +90,32 @@ func _on_line_edit_text_changed(new_text):
 	
 	labelAwesome.text = idk
 
-func changeCurrentPrompt():
-	var rng = RandomNumberGenerator.new()
-	var arraySize = currentCharacter.def.prompts.size()
-	var my_random_number = rng.randi_range(0, arraySize) - 1
-	print(my_random_number)
+func changeCurrentPrompt(prompt_number):
+	rpc_change_prompt.rpc(prompt_number)
+
+@rpc("any_peer", "call_local", "reliable")
+func rpc_change_prompt(prompt_number):
 	prompt = "Select an answer"
 	playerText.focus_mode = 0
 	playerText.text = ""
-	currentPrompt = my_random_number
-	displayPrompt.text = currentCharacter.def.prompts[currentPrompt].promptText
+	currentPrompt = prompt_number
+	displayPrompt.text = CharacterManager.current_character.prompts[currentPrompt].promptText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
-	answer1.text = currentCharacter.def.prompts[currentPrompt].answer1.answerText
-	answer2.text = currentCharacter.def.prompts[currentPrompt].answer2.answerText
-	answer3.text = currentCharacter.def.prompts[currentPrompt].answer3.answerText
+	answer1.text = CharacterManager.current_character.prompts[currentPrompt].answer1.answerText
+	answer2.text = CharacterManager.current_character.prompts[currentPrompt].answer2.answerText
+	answer3.text = CharacterManager.current_character.prompts[currentPrompt].answer3.answerText
 
 func _on_answer_1_pressed():
-	prompt = currentCharacter.def.prompts[currentPrompt].answer1.answerText
+	prompt = CharacterManager.current_character.prompts[currentPrompt].answer1.answerText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
 	playerText.focus_mode = 2
 
 func _on_answer_2_pressed():
-	prompt = currentCharacter.def.prompts[currentPrompt].answer2.answerText
+	prompt = CharacterManager.current_character.prompts[currentPrompt].answer2.answerText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
 	playerText.focus_mode = 2
 
 func _on_answer_3_pressed():
-	prompt = currentCharacter.def.prompts[currentPrompt].answer3.answerText
+	prompt = CharacterManager.current_character.prompts[currentPrompt].answer3.answerText
 	labelAwesome.text = "[color=gray]" + prompt + "[/color]"
 	playerText.focus_mode = 2

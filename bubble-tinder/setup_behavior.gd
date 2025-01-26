@@ -26,4 +26,5 @@ func on_setup_start():
 func rpc_get_character(chara: int):
 	print("CALLING RPC FROM ID: " + str(multiplayer.get_remote_sender_id()))
 	selected_character = CharacterManager.character_list[chara]
+	CharacterManager.current_character = selected_character
 	on_select_character.emit(selected_character)

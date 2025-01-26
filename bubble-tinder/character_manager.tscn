@@ -1,10 +1,77 @@
-[gd_scene load_steps=7 format=3 uid="uid://blh4muv7nejjd"]
+[gd_scene load_steps=20 format=3 uid="uid://blh4muv7nejjd"]
 
 [ext_resource type="Script" path="res://character_manager.gd" id="1_ucxrb"]
 [ext_resource type="Resource" uid="uid://d3rylo21midn4" path="res://resource/characters/goth.tres" id="2_0iqh2"]
 [ext_resource type="Resource" uid="uid://cdq7bw6swgqp6" path="res://resource/characters/gymbro.tres" id="3_oyct8"]
 [ext_resource type="Script" path="res://resource/prompt.gd" id="4_ut5l5"]
 [ext_resource type="Script" path="res://resource/character.gd" id="5_84a2m"]
+[ext_resource type="Script" path="res://resource/answer.gd" id="5_maclj"]
+
+[sub_resource type="Resource" id="Resource_y2i68"]
+script = ExtResource("5_maclj")
+answerText = "Hiiiiiii :3"
+answerTrait = 0
+
+[sub_resource type="Resource" id="Resource_xkqvf"]
+script = ExtResource("5_maclj")
+answerText = "Hi."
+answerTrait = 1
+
+[sub_resource type="Resource" id="Resource_ulgns"]
+script = ExtResource("5_maclj")
+answerText = "Hi (why didnt you text me)"
+answerTrait = 2
+
+[sub_resource type="Resource" id="Resource_w0ymg"]
+script = ExtResource("4_ut5l5")
+promptText = "Omg hi"
+answer1 = SubResource("Resource_y2i68")
+answer2 = SubResource("Resource_xkqvf")
+answer3 = SubResource("Resource_ulgns")
+
+[sub_resource type="Resource" id="Resource_fqm7u"]
+script = ExtResource("5_maclj")
+answerText = "I love sonic yay"
+answerTrait = 0
+
+[sub_resource type="Resource" id="Resource_c4fco"]
+script = ExtResource("5_maclj")
+answerText = "Hello"
+answerTrait = 1
+
+[sub_resource type="Resource" id="Resource_ncrps"]
+script = ExtResource("5_maclj")
+answerText = "Skibidi toilet"
+answerTrait = 2
+
+[sub_resource type="Resource" id="Resource_gg0e8"]
+script = ExtResource("4_ut5l5")
+promptText = "Ummm hi hello"
+answer1 = SubResource("Resource_fqm7u")
+answer2 = SubResource("Resource_c4fco")
+answer3 = SubResource("Resource_ncrps")
+
+[sub_resource type="Resource" id="Resource_fdqa0"]
+script = ExtResource("5_maclj")
+answerText = "Skibidi"
+answerTrait = 0
+
+[sub_resource type="Resource" id="Resource_epc4s"]
+script = ExtResource("5_maclj")
+answerText = "Yahooooo"
+answerTrait = 2
+
+[sub_resource type="Resource" id="Resource_ao7oc"]
+script = ExtResource("5_maclj")
+answerText = "Epicness incorporated"
+answerTrait = 3
+
+[sub_resource type="Resource" id="Resource_j4lis"]
+script = ExtResource("4_ut5l5")
+promptText = "Whats vibes yay"
+answer1 = SubResource("Resource_fdqa0")
+answer2 = SubResource("Resource_epc4s")
+answer3 = SubResource("Resource_ao7oc")
 
 [sub_resource type="Resource" id="Resource_kiv1t"]
 script = ExtResource("5_84a2m")
@@ -17,7 +84,7 @@ postive1 = 2
 postive2 = 1
 negative1 = 3
 negative2 = 4
-prompts = Array[ExtResource("4_ut5l5")]([])
+prompts = Array[ExtResource("4_ut5l5")]([SubResource("Resource_w0ymg"), SubResource("Resource_gg0e8"), SubResource("Resource_j4lis")])
 
 [node name="CharacterManager" type="Node"]
 script = ExtResource("1_ucxrb")
