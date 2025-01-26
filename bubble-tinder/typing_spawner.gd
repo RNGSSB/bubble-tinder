@@ -15,11 +15,17 @@ func _on_start_typing_callback() -> void:
 	
 func _on_start_typing() -> void:
 	var typing_one = typing_scene.instantiate()
-	typing_one.name = str($"../../../Multiplayer Manager".player_one.ID)
+	typing_one.name = str(1)
 	$"Player 1 Typing UI".add_child(typing_one)
-	var typing_two = typing_scene.instantiate()
-	typing_two.name = str($"../../../Multiplayer Manager".player_two.ID)
-	$"Player 2 Typing UI2".add_child(typing_two)
+	
+	if multiplayer.is_server():
+		var typing_two = typing_scene.instantiate()
+		typing_two.name = str($"../../../Multiplayer Manager".player_two.ID)
+		$"Player 2 Typing UI2".add_child(typing_two)
+	else:
+		var typing_two = typing_scene.instantiate()
+		typing_two.name = str(multiplayer.get_unique_id())
+		$"Player 2 Typing UI2".add_child(typing_two)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

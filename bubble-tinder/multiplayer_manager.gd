@@ -18,10 +18,7 @@ func _add_second_player(id = 1):
 	if id == 1:
 		return
 	print("I've added player: " + str(id))
-	if multiplayer.is_server() == false:
-		player_one = player_ID_scene.instantiate()
-		player_one.name = str(1)
-		player_one.set_id(1)
+
 	player_two = player_ID_scene.instantiate()
 	player_two.name = str(id)
 	player_two.set_id(id)
