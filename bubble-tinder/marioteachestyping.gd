@@ -40,6 +40,7 @@ func _process(delta):
 func _on_line_edit_text_submitted(new_text):
 	if(new_text == prompt):
 		print("YES!")
+		ScoreManager.add_player_msg_to_chat(name.to_int(), new_text)
 		ScoreManager.add_player_score(name.to_int(), calculateScore())
 	else:
 		print("NO!")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=16 format=3 uid="uid://dsafd8u62l41j"]
+[gd_resource type="Resource" script_class="Character" load_steps=16 format=3 uid="uid://dkc2f6fd603df"]
 
 [ext_resource type="Script" path="res://resource/prompt.gd" id="1_lmeaw"]
 [ext_resource type="Script" path="res://resource/answer.gd" id="2_bqnll"]

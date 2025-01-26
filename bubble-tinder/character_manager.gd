@@ -17,8 +17,11 @@ func _generate_characters() -> int:
 
 func _generate_prompt() -> int:
 	# TODO: Check if this prompt has been read before, if so, don't play it.
+	if multiplayer.is_server() == false:
+		return -1
 	print("I AM GENERATING A NEW PROMPT: " + str(multiplayer.get_unique_id()))
 	var prompt_random = current_character.prompts.pick_random()
+	ScoreManager.add_player_msg_to_chat(00, prompt_random.promptText)
 	return current_character.prompts.find(prompt_random, 0)
 
 func generate_new_prompt() -> void:
