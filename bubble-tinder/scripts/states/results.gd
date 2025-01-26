@@ -7,6 +7,7 @@ func Exit():
 func Enter():
 	owner.stateLabel.text = owner.CURRSTATE
 	print("Results!!!!")
+	set_results_finally()
 
 func Update(_delta: float):
 	if has_set_results == false:
